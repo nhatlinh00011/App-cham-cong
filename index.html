@@ -763,6 +763,77 @@ button{
 }
 
 /* ==============================
+   QUICK OVERTIME ADD
+================================ */
+.quick-ot-date{
+    color:#777;
+    font-size:14px;
+    margin:-8px 0 18px;
+}
+.quick-ot-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+    margin-bottom:14px;
+}
+.quick-ot-field{
+    display:flex;
+    flex-direction:column;
+    gap:7px;
+}
+.quick-ot-field label{
+    font-size:14px;
+    font-weight:700;
+    color:#211b52;
+}
+.quick-ot-field input{
+    width:100%;
+    padding:13px 12px;
+    border:1px solid #e0e0e7;
+    border-radius:14px;
+    background:#f7f8fa;
+    color:#211b52;
+    font:inherit;
+    font-size:16px;
+    outline:none;
+}
+.quick-ot-field input:focus{
+    border-color:#6847ff;
+    background:white;
+}
+.quick-ot-hint{
+    background:#eeeaff;
+    border-radius:15px;
+    padding:12px 14px;
+    color:#55506f;
+    font-size:13px;
+    line-height:1.45;
+    margin-bottom:14px;
+}
+.quick-ot-actions{
+    display:flex;
+    gap:10px;
+}
+.quick-ot-actions .primary{
+    flex:1;
+}
+.quick-ot-history{
+    width:100%;
+    margin-top:10px;
+    padding:11px;
+    border-radius:13px;
+    background:#f0efff;
+    color:#6847ff;
+    font-weight:700;
+    font-size:14px;
+}
+@media(max-width:420px){
+    .quick-ot-grid{
+        gap:9px;
+    }
+}
+
+/* ==============================
    OVERTIME LOG
 ================================ */
 
@@ -1361,15 +1432,63 @@ button{
 }
 
 
+/* Mobile screen flow: mỗi màn hình bắt đầu từ đầu viewport */
+html, body{
+    scroll-behavior:auto;
+    overflow-x:hidden;
+}
+
+.app{
+    position:relative;
+    overflow-x:hidden;
+}
+
 /* BOTTOM NAV + CLOUD ACCOUNT */
 .bottom-nav{position:fixed;left:50%;bottom:0;transform:translateX(-50%);width:min(600px,100%);height:68px;background:rgba(255,255,255,.96);backdrop-filter:blur(14px);border-top:1px solid rgba(35,31,95,.08);display:flex;align-items:stretch;justify-content:space-around;z-index:50;box-shadow:0 -5px 20px rgba(35,31,95,.06)}
 .nav-btn{flex:1;background:none;color:#85829a;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;font-size:11px;font-weight:600}
 .nav-btn .nav-icon{font-size:23px;line-height:1}.nav-btn.active{color:#6847ff}.nav-btn:active{transform:scale(.96)}
 .bottom-bar{bottom:68px}
 .screen-pad{padding:20px 20px 90px}.screen-title{font-size:29px;font-weight:800;color:#211b52;margin:8px 2px 18px}
-.data-hero{background:linear-gradient(135deg,#6847ff,#8a6bff);color:white;border-radius:24px;padding:20px;box-shadow:0 12px 26px rgba(104,71,255,.22);margin-bottom:16px}.data-hero-label{font-size:14px;opacity:.88}.data-hero-value{font-size:29px;font-weight:800;margin-top:5px}.data-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}.data-stat{background:rgba(255,255,255,.14);border-radius:15px;padding:10px}.data-stat strong{display:block;font-size:18px;margin-bottom:2px}.data-card{background:white;border-radius:20px;padding:16px;margin-bottom:12px;box-shadow:0 6px 18px rgba(40,40,80,.06)}.data-card h3{font-size:17px;margin-bottom:10px}.history-list{display:flex;flex-direction:column;gap:9px;max-height:52vh;overflow:auto}.history-item{background:#f7f8fa;border:1px solid #e8e8ee;border-radius:15px;padding:12px}.history-top{display:flex;justify-content:space-between;gap:10px}.history-sub{font-size:13px;color:#888;margin-top:4px}.history-money{font-weight:800;color:#2670ff;white-space:nowrap}
+.export-screen{min-height:100vh;padding-bottom:32px}.export-topbar{display:flex;align-items:center;gap:10px;margin-bottom:14px}.export-back{width:44px;height:44px;border-radius:14px;background:#fff;color:#211b52;font-size:34px;line-height:1;box-shadow:0 5px 14px rgba(40,40,80,.08)}.export-title{margin:0;font-size:28px}.export-subtitle{font-size:13px;color:#777;margin-top:-12px}.export-card{margin-bottom:14px}.export-month-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}.export-month{padding:11px 4px;border-radius:13px;background:#f1f1f5;color:#211b52;font-size:13px;font-weight:700;border:1px solid transparent}.export-month small{display:block;font-size:10px;font-weight:600;margin-top:2px;color:#8b8b93}.export-month.current-year{background:#fff1f1;color:#211b52;border-color:#f6caca}.export-month.current-year small{color:#2670d9}.export-month.previous-year{background:#f1f1f5;color:#211b52}.export-month.previous-year small{color:#8b8b93}.export-month.current-year.selected{background:#ffdede;color:#b83b3b;border-color:#f29a9a;box-shadow:0 5px 12px rgba(239,107,107,.18)}.export-month.previous-year.selected{background:#6847ff;color:#fff;box-shadow:0 5px 12px rgba(104,71,255,.2)}.export-month.previous-year.selected small{color:#fff;opacity:.8}.export-check-row{display:flex;align-items:flex-start;gap:11px;padding:13px 0;border-bottom:1px solid #eee;cursor:pointer}.export-check-row:last-child{border-bottom:0}.export-check-row input{width:20px;height:20px;accent-color:#6847ff;margin-top:1px;flex:0 0 20px}.export-check-row span{display:flex;flex-direction:column;gap:3px;font-size:15px;color:#211b52}.export-check-row small{font-size:11px;color:#888;line-height:1.35}.export-download-btn{margin-top:2px}.export-note{text-align:center;color:#888;font-size:11px;line-height:1.45;padding:10px 20px 0}
+
+/* Transaction sub-screens */
+.transaction-screen{min-height:100vh;min-height:100dvh;padding:18px 20px 92px;box-sizing:border-box}
+.transaction-topbar{display:flex;align-items:center;gap:10px;margin:4px 0 16px}
+.transaction-back{width:44px;height:44px;border:0;border-radius:14px;background:#fff;color:#211b52;font-size:32px;line-height:1;box-shadow:0 5px 14px rgba(40,40,80,.08)}
+.transaction-title{margin:0;font-size:28px;font-weight:800;color:#211b52;flex:1}
+.transaction-add{border:0;border-radius:14px;background:#6847ff;color:#fff;font-size:14px;font-weight:800;padding:12px 16px;box-shadow:0 8px 18px rgba(104,71,255,.22)}
+.transaction-total{background:linear-gradient(135deg,#6847ff,#8a6bff);color:#fff;border-radius:22px;padding:18px 20px;margin-bottom:14px;box-shadow:0 10px 24px rgba(104,71,255,.18)}
+.transaction-total span{display:block;font-size:13px;opacity:.9}.transaction-total strong{display:block;font-size:27px;margin-top:4px}
+.transaction-list{display:flex;flex-direction:column;gap:10px}
+.transaction-empty{background:#fff;border-radius:20px;padding:34px 20px;text-align:center;color:#8b889b;font-size:14px;box-shadow:0 6px 18px rgba(40,40,80,.05)}
+.transaction-item{background:#fff;border-radius:18px;padding:14px 15px;box-shadow:0 6px 18px rgba(40,40,80,.05);border:1px solid rgba(40,40,80,.05)}
+.transaction-item-top{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}.transaction-item-date{font-size:12px;color:#8a8797;margin-bottom:4px}.transaction-item-note{font-size:14px;color:#211b52;font-weight:650;line-height:1.35}.transaction-item-amount{font-size:17px;font-weight:800;color:#2670ff;white-space:nowrap}.transaction-actions{display:flex;gap:8px;margin-top:11px}.transaction-action{flex:1;border:0;border-radius:11px;padding:9px;font-size:12px;font-weight:700;background:#f1f1f5;color:#211b52}.transaction-action.delete{background:#fff0f0;color:#e53935}
+.transaction-modal-note{font-size:12px;color:#888;margin:-4px 0 12px}
+@media(max-width:480px){.transaction-title{font-size:25px}.transaction-add{padding:11px 13px}.transaction-total strong{font-size:25px}}
+.data-hero{background:linear-gradient(135deg,#6847ff,#8a6bff);color:white;border-radius:24px;padding:20px;box-shadow:0 12px 26px rgba(104,71,255,.22);margin-bottom:16px}.data-hero-label{font-size:14px;opacity:.88}.data-hero-value{font-size:29px;font-weight:800;margin-top:5px}.data-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}.data-stat{background:rgba(255,255,255,.14);border-radius:15px;padding:12px}.data-stat strong{display:block;font-size:22px;line-height:1.15;margin-bottom:5px}.data-stat span{display:block;font-size:13px;line-height:1.35;opacity:.92}.data-stat small{display:block;font-size:11px;line-height:1.35;opacity:.78;margin-top:5px}.data-card{background:white;border-radius:20px;padding:16px;margin-bottom:12px;box-shadow:0 6px 18px rgba(40,40,80,.06)}.data-card h3{font-size:17px;margin-bottom:10px}.history-list{display:flex;flex-direction:column;gap:9px;max-height:52vh;overflow:auto}.history-item{background:#f7f8fa;border:1px solid #e8e8ee;border-radius:15px;padding:12px}.history-top{display:flex;justify-content:space-between;gap:10px}.history-sub{font-size:13px;color:#888;margin-top:4px}.history-money{font-weight:800;color:#2670ff;white-space:nowrap}
 .account-card{background:white;border-radius:24px;padding:20px;box-shadow:0 6px 18px rgba(40,40,80,.06);text-align:center}.account-avatar{width:88px;height:88px;border-radius:50%;object-fit:cover;background:#eeeaff;display:block;margin:2px auto 12px;border:3px solid white;box-shadow:0 5px 16px rgba(0,0,0,.12)}.account-name{font-size:22px;font-weight:800;color:#211b52}.account-email{font-size:14px;color:#888;margin-top:4px;word-break:break-word}.sync-status{margin:16px 0;padding:12px;border-radius:15px;background:#f1f8ff;color:#2670ff;font-size:14px}.account-actions{display:flex;flex-direction:column;gap:10px}.account-btn{width:100%;padding:14px;border-radius:15px;background:#f2f2f6;color:#211b52;font-size:16px;font-weight:700}.account-btn.primary-account{background:#6847ff;color:white}.account-btn.danger-account{background:#fff0f0;color:#e53935}.avatar-input{display:none}
 @media(max-width:480px){.screen-title{font-size:26px}.data-hero-value{font-size:26px}}
+
+
+/* SETTINGS SCREEN */
+.settings-screen{min-height:100vh;min-height:100dvh;box-sizing:border-box;padding:18px 20px 34px;background:#eef8f8}
+.settings-topbar{display:flex;align-items:center;gap:10px;margin:4px 0 18px}
+.settings-back{width:44px;height:44px;border:0;border-radius:14px;background:#fff;color:#211b52;font-size:34px;line-height:1;box-shadow:0 5px 14px rgba(40,40,80,.08)}
+.settings-title{margin:0;font-size:28px;font-weight:800;color:#211b52;flex:1}
+.settings-subtitle{font-size:13px;color:#777;margin:2px 0 16px}
+.settings-section{background:#fff;border-radius:22px;padding:18px 16px;margin-bottom:14px;box-shadow:0 6px 18px rgba(40,40,80,.06)}
+.settings-section h2{margin:0 0 6px;color:#211b52;font-size:21px;font-weight:800}
+.settings-section-note{font-size:12px;color:#8a8797;line-height:1.45;margin-bottom:14px}
+.settings-field{margin-bottom:13px}
+.settings-field:last-of-type{margin-bottom:0}
+.settings-label{display:block;color:#211b52;font-size:14px;font-weight:750;margin:0 0 6px 2px}
+.settings-input{width:100%;box-sizing:border-box;border:1px solid #dedee5;border-radius:15px;background:#fff;color:#211b52;font-size:16px;padding:13px 14px;outline:none}
+.settings-input:focus{border-color:#6847ff;box-shadow:0 0 0 3px rgba(104,71,255,.10)}
+.settings-help{margin:5px 3px 0;color:#a0a0a8;font-size:11px;line-height:1.35}
+.settings-save{width:100%;margin-top:15px}
+.settings-danger{width:100%;margin-top:4px;color:#e53935;background:#f1f2f5}
+.settings-rate-preview{margin-top:11px;background:#f3efff;border-radius:14px;padding:11px 13px;color:#5b45d8;font-size:12px;line-height:1.45}
+@media(max-width:480px){.settings-title{font-size:25px}.settings-section{padding:16px 14px}.settings-section h2{font-size:20px}}
 
 /* LOGIN */
 .login-screen{min-height:100vh;min-height:100dvh;box-sizing:border-box;padding:40px 24px 28px;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,#eef8f8 0%,#f7fbfb 100%)}
@@ -1380,12 +1499,115 @@ button{
 .login-icon{width:28px;height:28px;display:inline-flex;align-items:center;justify-content:center;font-size:21px;font-weight:800;flex:0 0 28px}.google-g{color:#4285f4;font-family:Arial,sans-serif}.facebook-f{color:#fff;font-family:Arial,sans-serif;font-size:24px}
 .login-note{margin:28px auto 0;max-width:340px;color:#8a8a8a;font-size:13px;line-height:1.5}.login-footer{margin-top:34px;color:#777;font-size:12px;line-height:1.5}.login-footer strong{color:#5841d8}.app.auth-hidden{display:none!important}
 @media(max-width:480px){.login-screen{padding:32px 22px 24px}.login-logo{width:88px;height:88px;border-radius:22px}.login-title{font-size:32px}.login-subtitle{font-size:16px;margin-bottom:30px}}
+
+/* Fix: Data/Account screens are outside .app in the current DOM.
+   When Home is hidden, .app must not keep a full viewport blank space. */
+.app.screen-only{
+    min-height:0 !important;
+    height:0 !important;
+    padding:0 !important;
+    margin:0 !important;
+    overflow:visible !important;
+}
+
+/* ==============================
+   MOBILE TYPOGRAPHY COMPACT
+   ============================== */
+@media (max-width: 600px){
+  body{font-size:12px;}
+
+  .list-header{padding:20px 18px 14px;}
+  .list-title{font-size:25px;}
+  .add-btn{width:48px;height:48px;font-size:28px;border-radius:16px;}
+  .board-list{padding:0 18px;}
+  .board-card{padding:16px;border-radius:20px;gap:12px;}
+  .board-icon{width:50px;height:50px;font-size:24px;}
+  .board-info h3{font-size:17px;margin-bottom:3px;}
+  .board-info p{font-size:12px;}
+  .board-arrow{font-size:22px;}
+
+  .detail-header{padding:18px 18px 12px;gap:7px;}
+  .back-btn{font-size:32px;}
+  .detail-name{font-size:25px;}
+  .settings-btn{width:48px;height:48px;font-size:22px;}
+
+  .tools{margin:0 18px;padding:16px 12px;gap:14px 6px;border-radius:0 0 22px 22px;}
+  .tool{gap:6px;font-size:12px;}
+  .tool-icon{width:56px;height:56px;border-radius:16px;font-size:25px;}
+
+  .summary{margin:16px 18px;border-radius:20px;}
+  .summary-head{padding:16px 20px;}
+  .summary-title{font-size:22px;}
+  .month-link{font-size:15px;}
+  .summary-row{min-height:70px;padding:14px 20px;}
+  .summary-row-button{font-size:18px;}
+  .summary-row-button::after{font-size:18px;}
+  .summary-label{font-size:15px;}
+  .summary-value{font-size:18px;}
+  .summary-more{padding:0 0 14px;}
+  .more-btn{padding:8px 20px;font-size:14px;}
+  .bottom-check-full{min-height:62px;}
+  .bottom-check-full strong{font-size:18px;}
+  .bottom-check-full span{font-size:12px;}
+
+  .calendar-section{padding:0 18px;}
+  .calendar-head{margin:16px 0 12px;gap:6px;}
+  .calendar-title{font-size:20px;}
+  .calendar-detail{font-size:15px;}
+  .month-arrow{width:38px;height:38px;flex-basis:38px;font-size:23px;}
+  .weekdays{margin-bottom:7px;font-size:15px;}
+  .calendar-grid{gap:5px;}
+  .day{min-height:60px;border-radius:11px;font-size:17px;}
+
+  .month-stats{margin-top:14px;padding:5px 12px;border-radius:18px;}
+  .month-stat-row{min-height:48px;gap:0 10px;}
+  .month-stat-label,.month-stat-value{font-size:12px;}
+  .remaining-salary-box{margin:10px 0 3px;padding:11px 10px;border-radius:14px;}
+  .remaining-salary-label{font-size:13px;}
+  .remaining-salary-value{font-size:16px;}
+
+  .screen-pad{padding:16px 18px 82px;}
+  .screen-title{font-size:24px;margin:6px 2px 14px;}
+  
+/* Transaction sub-screens */
+.transaction-screen{min-height:100vh;min-height:100dvh;padding:18px 20px 92px;box-sizing:border-box}
+.transaction-topbar{display:flex;align-items:center;gap:10px;margin:4px 0 16px}
+.transaction-back{width:44px;height:44px;border:0;border-radius:14px;background:#fff;color:#211b52;font-size:32px;line-height:1;box-shadow:0 5px 14px rgba(40,40,80,.08)}
+.transaction-title{margin:0;font-size:28px;font-weight:800;color:#211b52;flex:1}
+.transaction-add{border:0;border-radius:14px;background:#6847ff;color:#fff;font-size:14px;font-weight:800;padding:12px 16px;box-shadow:0 8px 18px rgba(104,71,255,.22)}
+.transaction-total{background:linear-gradient(135deg,#6847ff,#8a6bff);color:#fff;border-radius:22px;padding:18px 20px;margin-bottom:14px;box-shadow:0 10px 24px rgba(104,71,255,.18)}
+.transaction-total span{display:block;font-size:13px;opacity:.9}.transaction-total strong{display:block;font-size:27px;margin-top:4px}
+.transaction-list{display:flex;flex-direction:column;gap:10px}
+.transaction-empty{background:#fff;border-radius:20px;padding:34px 20px;text-align:center;color:#8b889b;font-size:14px;box-shadow:0 6px 18px rgba(40,40,80,.05)}
+.transaction-item{background:#fff;border-radius:18px;padding:14px 15px;box-shadow:0 6px 18px rgba(40,40,80,.05);border:1px solid rgba(40,40,80,.05)}
+.transaction-item-top{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}.transaction-item-date{font-size:12px;color:#8a8797;margin-bottom:4px}.transaction-item-note{font-size:14px;color:#211b52;font-weight:650;line-height:1.35}.transaction-item-amount{font-size:17px;font-weight:800;color:#2670ff;white-space:nowrap}.transaction-actions{display:flex;gap:8px;margin-top:11px}.transaction-action{flex:1;border:0;border-radius:11px;padding:9px;font-size:12px;font-weight:700;background:#f1f1f5;color:#211b52}.transaction-action.delete{background:#fff0f0;color:#e53935}
+.transaction-modal-note{font-size:12px;color:#888;margin:-4px 0 12px}
+@media(max-width:480px){.transaction-title{font-size:25px}.transaction-add{padding:11px 13px}.transaction-total strong{font-size:25px}}
+.data-hero{padding:16px;border-radius:20px;}
+  .data-hero-label{font-size:12px;}
+  .data-hero-value{font-size:24px;}
+  .data-stat strong{font-size:19px;}
+  .data-card h3{font-size:15px;}
+  .history-sub{font-size:12px;}
+  .account-card{padding:16px;border-radius:20px;}
+  .account-name{font-size:19px;}
+  .account-email,.sync-status{font-size:12px;}
+  .account-btn{padding:12px;font-size:14px;}
+}
+
 </style>
     <meta name="attendance-app-version" content="2026-08-23-google-redirect-v1">
     <link rel="icon" type="image/png" href="logo.webp">
     <link rel="apple-touch-icon" href="logo.webp">
     <meta name="theme-color" content="#168ff5">
 
+
+<style>
+.event-star{position:absolute;right:5px;top:3px;color:#ef4444;font-size:12px;line-height:1;z-index:3}.day{position:relative}
+.event-hint{background:#f3efff;color:#4f46e5;border-radius:14px;padding:12px 14px;margin-bottom:14px;text-align:center;font-size:14px}
+.event-year-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-height:55vh;overflow:auto;padding-right:2px}.event-month{background:#f8fafc;border-radius:14px;padding:10px}.event-month h3{margin:0 0 7px;text-align:center;font-size:15px;color:#22205b}.event-weekdays,.event-mini-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:3px}.event-weekdays span{font-size:9px;text-align:center;color:#777}.event-day{position:relative;border:0;background:#fff;border-radius:7px;min-height:28px;font-size:11px;color:#22205b}.event-day.has-event{background:#fff1f2}.event-day i{position:absolute;right:1px;top:0;color:#ef4444;font-size:7px;font-style:normal}.event-empty{color:#777;padding:10px 0}.event-list-item{display:flex;justify-content:space-between;gap:10px;align-items:center;border-bottom:1px solid #eee;padding:10px 0}.event-note{font-size:12px;color:#777;margin-top:4px}.event-actions{display:flex;gap:6px;align-items:center;flex-shrink:0}.event-reminder-btn,.event-delete-btn{border:0;border-radius:10px;padding:8px 9px;font-size:11px;background:#eef2ff;color:#2670ff}.event-reminder-btn.enabled{background:#eaf8ee;color:#23823a}.event-delete-btn{background:#fff0f0;color:#e33}.leave-message{font-size:15px;line-height:1.6;background:#f3efff;border-radius:14px;padding:16px;margin:12px 0 16px;color:#27245e}.secondary{width:100%;border:0;border-radius:14px;padding:13px 16px;margin-top:10px;background:#eef1f5;color:#27245e;font-size:15px;font-weight:600}
+@media(max-width:600px){.event-year-grid{grid-template-columns:1fr 1fr}.event-list-item{align-items:flex-start;flex-direction:column}.event-actions{width:100%}.event-reminder-btn{flex:1}}
+</style>
 </head>
 
 <body>
@@ -1480,7 +1702,7 @@ button{
 
             <button
                 class="tool"
-                onclick="openAppendix('Ứng lương')">
+                onclick="openTransactionScreen('Ứng lương')">
 
                 <div class="tool-icon">▣+</div>
 
@@ -1491,7 +1713,7 @@ button{
 
             <button
                 class="tool"
-                onclick="openOvertimeLog()">
+                onclick="openOvertimeQuickAdd()">
 
                 <div class="tool-icon">▣+</div>
 
@@ -1502,7 +1724,7 @@ button{
 
             <button
                 class="tool"
-                onclick="openAppendix('Phụ cấp')">
+                onclick="openTransactionScreen('Phụ cấp')">
 
                 <div class="tool-icon">♧</div>
 
@@ -1513,7 +1735,7 @@ button{
 
             <button
                 class="tool"
-                onclick="openAppendix('Trừ tiền')">
+                onclick="openTransactionScreen('Trừ tiền')">
 
                 <div class="tool-icon">▣×</div>
 
@@ -1524,18 +1746,18 @@ button{
 
             <button
                 class="tool"
-                onclick="openAppendix('Lợi nhuận')">
+                onclick="openAnnualLeaveMenu()">
 
-                <div class="tool-icon">＄</div>
+                <div class="tool-icon">🌴</div>
 
-                Lợi nhuận
+                Phép Năm
 
             </button>
 
 
             <button
                 class="tool"
-                onclick="openAppendix('Thanh toán')">
+                onclick="openTransactionScreen('Thanh toán')">
 
                 <div class="tool-icon">▭</div>
 
@@ -1782,6 +2004,162 @@ button{
         </div>
     </div>
 
+    <div id="exportScreen" class="hidden screen-pad export-screen">
+        <div class="export-topbar">
+            <button class="export-back" type="button" onclick="navigateApp('home')">‹</button>
+            <div>
+                <div class="screen-title export-title">Xuất Excel</div>
+                <div class="export-subtitle">Chọn tháng và loại bảng lương cần xuất</div>
+            </div>
+        </div>
+
+        <div class="data-card export-card">
+            <h3>Chọn tháng</h3>
+            <div id="exportMonths" class="export-month-grid"></div>
+        </div>
+
+        <div class="data-card export-card">
+            <h3>Nội dung xuất</h3>
+            <label class="export-check-row"><input type="checkbox" value="deduct" class="export-type" checked><span><strong>Xuất bảng lương trừ tiền</strong><small>Các khoản trừ tiền đã nhập trong tháng</small></span></label>
+            <label class="export-check-row"><input type="checkbox" value="admin" class="export-type" checked><span><strong>Xuất bảng lương hành chính</strong><small>Công, nghỉ có lương, nghỉ không lương và tiền công</small></span></label>
+            <label class="export-check-row"><input type="checkbox" value="overtime" class="export-type" checked><span><strong>Xuất bảng lương tăng ca</strong><small>Giờ tăng ca, hệ số và tiền tăng ca</small></span></label>
+            <label class="export-check-row"><input type="checkbox" value="allowance" class="export-type" checked><span><strong>Xuất bảng lương phụ cấp</strong><small>Các khoản phụ cấp đã nhập trong tháng</small></span></label>
+            <label class="export-check-row"><input type="checkbox" value="summary" class="export-type" checked><span><strong>Xuất bảng lương tổng hợp</strong><small>Tổng hợp công, tăng ca, phụ cấp, trừ tiền và số còn nhận</small></span></label>
+        </div>
+
+        <button class="primary export-download-btn" type="button" onclick="downloadSelectedExports()">📥 Xuất dữ liệu đã chọn</button>
+        <div class="export-note">Dữ liệu được xuất theo tháng đang chọn và có thể mở trực tiếp bằng Excel.</div>
+    </div>
+
+    <div id="transactionScreen" class="hidden screen-pad transaction-screen">
+        <div class="transaction-topbar">
+            <button class="transaction-back" type="button" onclick="closeTransactionScreen()">‹</button>
+            <h1 id="transactionTitle" class="transaction-title">Ứng lương</h1>
+            <button class="transaction-add" type="button" onclick="openTransactionForm()">＋ Thêm mới</button>
+        </div>
+        <div id="transactionTotal" class="transaction-total"></div>
+        <div id="transactionList" class="transaction-list"></div>
+    </div>
+
+
+    <div id="overtimeScreen" class="hidden screen-pad overtime-screen">
+        <div class="overtime-topbar">
+            <button class="overtime-back" type="button" onclick="closeOvertimeScreen()">‹</button>
+            <div>
+                <h1 class="overtime-title">Tăng ca</h1>
+                <div class="overtime-subtitle">Nhập và theo dõi dữ liệu tăng ca</div>
+            </div>
+        </div>
+
+        <section class="overtime-add-card">
+            <h2>Thêm tăng ca hôm nay</h2>
+            <div id="overtimeTodayLabel" class="overtime-date-label"></div>
+            <div class="quick-ot-grid">
+                <div class="quick-ot-field">
+                    <label for="pageOtHours">Giờ tăng ca</label>
+                    <input id="pageOtHours" type="number" min="0" max="24" step="0.5" inputmode="decimal" value="0">
+                </div>
+                <div class="quick-ot-field">
+                    <label for="pageOtRate">Hệ số</label>
+                    <input id="pageOtRate" class="settings-input" type="text" value="X1,5" readonly>
+                </div>
+            </div>
+            <div id="overtimePageHint" class="quick-ot-hint"></div>
+            <button type="button" class="primary" onclick="savePageOvertime()">Lưu tăng ca</button>
+        </section>
+
+        <section class="overtime-history-card">
+            <div class="overtime-history-head">
+                <div>
+                    <h2>Lịch sử tăng ca</h2>
+                    <div id="overtimeMonthLabel" class="overtime-date-label"></div>
+                </div>
+            </div>
+            <div id="overtimePageSummary" class="overtime-summary"></div>
+            <div id="overtimePageLog" class="overtime-log"></div>
+        </section>
+    </div>
+
+    <div id="annualLeaveScreen" class="hidden screen-pad annual-leave-screen">
+        <div class="annual-topbar">
+            <button class="annual-back" type="button" onclick="closeAnnualLeaveScreen()">‹</button>
+            <div>
+                <h1 class="annual-title">Phép Năm</h1>
+                <div class="annual-subtitle">Quản lý phép năm và ghi chú sự kiện</div>
+            </div>
+        </div>
+
+        <section class="annual-card">
+            <h2>Phép Năm</h2>
+            <div class="annual-stat-grid">
+                <div><span>Được hưởng</span><strong id="annualEntitlement">0 ngày</strong></div>
+                <div><span>Đã sử dụng</span><strong id="annualUsed">0 ngày</strong></div>
+                <div><span>Còn lại</span><strong id="annualRemaining">0 ngày</strong></div>
+            </div>
+            <label class="settings-label" for="annualLeavePageInput">Số phép năm được hưởng</label>
+            <input id="annualLeavePageInput" class="settings-input" type="number" min="0" step="0.5" inputmode="decimal" placeholder="Ví dụ: 12">
+            <div class="settings-help">Nhập tổng số ngày phép năm bạn được hưởng trong năm.</div>
+            <button class="primary settings-save" type="button" onclick="saveAnnualLeavePage()">Lưu phép năm</button>
+            <div id="annualLeaveMessage" class="leave-message annual-inline-message hidden"></div>
+            <button id="annualLeaveOk" class="secondary annual-ok hidden" type="button" onclick="hideAnnualLeaveMessage()">Ok</button>
+        </section>
+
+        <section class="annual-card event-entry-card">
+            <h2>Ghi chú sự kiện</h2>
+            <div class="annual-event-note">Bấm vào nút bên dưới để mở lịch năm và tạo ghi chú nhắc nhở cho từng ngày.</div>
+            <button class="secondary" type="button" onclick="openEventCalendar()">📅 Ghi chú sự kiện</button>
+        </section>
+    </div>
+
+
+    <div id="settingsScreen" class="hidden settings-screen">
+        <div class="settings-topbar">
+            <button class="settings-back" type="button" onclick="closeSettingsScreen()">‹</button>
+            <h1 class="settings-title">Cài đặt bảng</h1>
+        </div>
+        <div class="settings-subtitle">Thiết lập riêng lương hành chính và lương tăng ca cho bảng này.</div>
+
+        <section class="settings-section">
+            <h2>Lương hành chính</h2>
+            <div class="settings-section-note">Các thông tin dùng để tính tiền công hành chính và ngày nghỉ có lương.</div>
+
+            <div class="settings-field">
+                <label class="settings-label" for="settingsJobName">Tên công việc</label>
+                <input id="settingsJobName" class="settings-input" type="text" autocomplete="off" placeholder="Ví dụ: Sofa" value="">
+                <div class="settings-help">Tên bảng/công việc bạn đang chấm công.</div>
+            </div>
+
+            <div class="settings-field">
+                <label class="settings-label" for="settingsSalary">Lương cơ bản</label>
+                <input id="settingsSalary" class="settings-input money-input" type="text" inputmode="numeric" autocomplete="off" placeholder="Ví dụ: 13.000.000" value="">
+                <div class="settings-help">Nhập mức lương cơ bản theo tháng. Số tiền sẽ tự động định dạng bằng dấu chấm.</div>
+            </div>
+
+            <div class="settings-field">
+                <label class="settings-label" for="settingsStandardDays">Số ngày nhận lương cơ bản</label>
+                <input id="settingsStandardDays" class="settings-input" type="number" min="1" step="1" inputmode="numeric" placeholder="Ví dụ: 26" value="">
+                <div class="settings-help">Ví dụ 26 ngày. Lương 1 ngày = lương cơ bản ÷ số ngày này.</div>
+            </div>
+
+            <button class="primary settings-save" type="button" onclick="saveAdministrativeSettings()">Lưu lương hành chính</button>
+        </section>
+
+        <section class="settings-section">
+            <h2>Lương Tăng Ca</h2>
+            <div class="settings-section-note">Tách riêng mức lương dùng để tính tăng ca. Hệ số tăng ca theo từng ngày vẫn giữ nguyên như giao diện chấm công hiện tại.</div>
+
+            <div class="settings-field">
+                <label class="settings-label" for="settingsOvertimeSalary">Mức lương tính tăng ca</label>
+                <input id="settingsOvertimeSalary" class="settings-input money-input" type="text" inputmode="numeric" autocomplete="off" placeholder="Ví dụ: 10.000.000" value="">
+                <div class="settings-help">Ví dụ lương hành chính 13.000.000đ nhưng tăng ca chỉ tính trên 10.000.000đ. Công thức tăng ca vẫn là: số giờ × đơn giá giờ tăng ca × hệ số.</div>
+            </div>
+
+            <div id="settingsOvertimeSalaryPreview" class="settings-rate-preview"></div>
+            <button class="primary settings-save" type="button" onclick="saveOvertimeSettings()">Lưu lương tăng ca</button>
+        </section>
+
+        <button class="secondary settings-danger" type="button" onclick="deleteBoardFromSettings()">Xóa bảng chấm công</button>
+    </div>
 
 
 <!-- BOTTOM -->
@@ -1884,6 +2262,16 @@ button{
 
   function cloudRef(uid){ return doc(db, "users", uid, "appData", "main"); }
 
+  // Xóa bảng "Sofa" được tạo tự động bởi phiên bản cũ.
+  function removeLegacyDefaultBoard(list){
+    if(!Array.isArray(list)) return [];
+    return list.filter(board => !(
+      String(board?.name || '').trim().toLowerCase() === 'sofa' &&
+      Number(board?.salary || 0) === 8500000 &&
+      Object.keys(board?.attendance || {}).length === 0
+    ));
+  }
+
   function setSyncStatus(text, ok=false){
     const el = document.getElementById("syncStatus");
     if(el){ el.textContent = text; el.style.background = ok ? "#effaf1" : "#f1f8ff"; el.style.color = ok ? "#2e8b3c" : "#2670ff"; }
@@ -1911,10 +2299,14 @@ button{
       if(snap.exists()){
         const data = snap.data() || {};
         const cloudUpdated = Number(data.updatedAt || 0);
-        if(Array.isArray(data.boards) && data.boards.length && cloudUpdated >= localUpdated){
-          window.__applyCloudBoards(data.boards);
+        const cloudBoards = removeLegacyDefaultBoard(data.boards);
+        if(Array.isArray(data.boards) && cloudUpdated >= localUpdated){
+          window.__applyCloudBoards(cloudBoards, cloudUpdated);
+          if(cloudBoards.length !== data.boards.length || data.boards.length === 0){
+            await pushCloud(cloudBoards);
+          }
         }else if(localUpdated > cloudUpdated){
-          await pushCloud(window.__getBoards());
+          await pushCloud(removeLegacyDefaultBoard(window.__getBoards()));
         }
       }else{
         await pushCloud(window.__getBoards());
@@ -1932,7 +2324,9 @@ button{
       if(Array.isArray(data.boards) && data.boards.length){
         const cloudUpdated = Number(data.updatedAt || 0);
         const localUpdated = Number(localStorage.getItem("dgLocalUpdatedAt") || 0);
-        if(cloudUpdated >= localUpdated) window.__applyCloudBoards(data.boards, cloudUpdated);
+        const cleanBoards = removeLegacyDefaultBoard(data.boards);
+        if(cloudUpdated >= localUpdated) window.__applyCloudBoards(cleanBoards, cloudUpdated);
+        if(cleanBoards.length !== data.boards.length) pushCloud(cleanBoards);
       }
       setSyncStatus("☁️ Đã đồng bộ", true);
     }, err => { console.error("Firestore listener:", err); setSyncStatus("⚠️ Mất kết nối đồng bộ", false); });
@@ -1958,9 +2352,12 @@ button{
     updateProfile: async function(name){ if(!cloudUser) return false; await updateProfile(cloudUser,{displayName:name}); await pushCloud(window.__getBoards()); return true; }
   };
 
-  async function setupFirebaseAuth() {
-    try { await setPersistence(auth, browserLocalPersistence); } catch (e) { console.warn("Firebase persistence:", e); }
-  }
+  // Khởi tạo persistence ngay khi Firebase được tải.
+  // Không chờ (await) thao tác này trong lúc người dùng bấm nút Google:
+  // trên iPhone/Safari, await trước signInWithPopup có thể làm mất user gesture
+  // và khiến lần bấm đầu tiên bị trình duyệt chặn popup.
+  const authPersistenceReady = setPersistence(auth, browserLocalPersistence)
+    .catch(e => console.warn("Firebase persistence:", e));
 
   function showMainAppFromFirebase(user) {
     if (!user) return;
@@ -1975,6 +2372,15 @@ button{
     } catch (e) {}
     if (login) login.style.display = "none";
     if (app) app.classList.remove("auth-hidden");
+    const nav = document.getElementById("bottomNav");
+    if (nav) nav.classList.remove("hidden");
+    try {
+      if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+      window.scrollTo({top:0,left:0,behavior:"instant"});
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+    } catch(e) { window.scrollTo(0,0); }
+    if (window.__refreshAccountScreen) window.__refreshAccountScreen();
   }
 
   window.loginWithGoogle = async function () {
@@ -1984,7 +2390,9 @@ button{
     try {
       if (button) button.disabled = true;
       if (label) label.textContent = "Đang kết nối Google...";
-      await setupFirebaseAuth();
+
+      // Quan trọng: gọi popup trực tiếp từ sự kiện click, không await
+      // setPersistence trước đó để Safari/iOS không làm mất user gesture.
       const result = await signInWithPopup(auth, googleProvider);
       if (result?.user) {
         showMainAppFromFirebase(result.user);
@@ -2006,7 +2414,7 @@ button{
     }
   };
 
-  setupFirebaseAuth().then(() => {
+  authPersistenceReady.finally(() => {
     onAuthStateChanged(auth, async (user) => {
       if (user) {
         showMainAppFromFirebase(user);
@@ -2057,31 +2465,27 @@ window.__applyCloudBoards = function(cloudBoards, cloudUpdated=Date.now()){
    INIT
 ========================================= */
 
-if(boards.length === 0){
+// Không tự tạo bảng chấm công mặc định.
+// Xóa bảng "Sofa" mặc định cũ nếu nó vẫn còn trong dữ liệu cục bộ.
+boards = boards.filter(board => !(
+    String(board?.name || '').trim().toLowerCase() === 'sofa' &&
+    Number(board?.salary || 0) === 8500000 &&
+    Object.keys(board?.attendance || {}).length === 0
+));
 
-    boards.push({
-        id:Date.now(),
-        name:"Sofa",
-        salary:8500000,
-        standardDays:26,
-        hoursPerDay:8,
-        overtimeRate:1.5,
-        advance:0,
-        deduct:0,
-        allowance:0,
-        overtime:0,
-        paid:0,
-        attendance:{}
-    });
-
-    saveData();
-}
+try {
+    localStorage.setItem("attendanceBoards", JSON.stringify(boards));
+    localStorage.setItem("dgLocalUpdatedAt", String(Date.now()));
+} catch(e) {}
 
 // Bổ sung thiết lập mặc định cho các bảng đã tạo từ phiên bản cũ.
 boards.forEach(board => {
     if(!board.standardDays) board.standardDays = 26;
     if(!board.hoursPerDay) board.hoursPerDay = 8;
     if(!board.overtimeRate) board.overtimeRate = 1.5;
+    if(!board.overtimeSalary) board.overtimeSalary = Number(board.salary) || 0;
+    if(board.annualLeave === undefined) board.annualLeave = 0;
+    if(!Array.isArray(board.events)) board.events = [];
 
     Object.values(board.attendance || {}).forEach(record => {
         if(record.overtimeHours === undefined){
@@ -2177,55 +2581,53 @@ function renderBoards(){
 
 function createBoard(){
 
-    const name =
-        prompt(
-            "Nhập tên bảng chấm công:"
-        );
+    openModal(`
+        <h2>Tạo bảng chấm công</h2>
+        <div class="transaction-modal-note">Nhập thông tin ban đầu. Số tiền sẽ tự động định dạng theo kiểu Việt Nam.</div>
+        <input id="createBoardName" class="input" type="text" autocomplete="off" placeholder="Tên bảng chấm công">
+        <input id="createBoardSalary" class="input money-input" type="text" inputmode="numeric" autocomplete="off" placeholder="Lương cơ bản/tháng">
+        <button class="primary" type="button" onclick="saveNewBoard()">Tạo mới</button>
+    `);
 
-    if(!name || !name.trim()){
+}
+
+function saveNewBoard(){
+
+    const name = document.getElementById("createBoardName")?.value.trim() || "";
+    const salary = parseMoney(document.getElementById("createBoardSalary")?.value);
+
+    if(!name){
+        alert("Vui lòng nhập tên bảng chấm công.");
         return;
     }
 
-    const salary =
-        prompt(
-            "Nhập lương cơ bản:",
-            "8500000"
-        );
+    if(salary <= 0){
+        alert("Vui lòng nhập lương cơ bản lớn hơn 0.");
+        return;
+    }
 
     const board = {
-
         id:Date.now(),
-
-        name:name.trim(),
-
-        salary:
-            Number(salary) || 0,
-
-        // 26 ngày công chuẩn/tháng, 8 giờ/ngày, tăng ca hệ số 1.5
+        name,
+        salary,
         standardDays:26,
         hoursPerDay:8,
         overtimeRate:1.5,
-
+        overtimeSalary:salary,
+        annualLeave:0,
+        events:[],
         advance:0,
-
         deduct:0,
-
         allowance:0,
-
         overtime:0,
-
         paid:0,
-
         transactions:[],
-
         attendance:{}
-
     };
 
     boards.push(board);
-
     saveData();
-
+    closeModal();
     renderBoards();
 
 }
@@ -2433,6 +2835,15 @@ function renderCalendar(){
 
         div.innerText=day;
 
+        const eventForDay = (currentBoard.events || []).find(e => e.date === key);
+        if(eventForDay){
+            const star = document.createElement("span");
+            star.className = "event-star";
+            star.textContent = "★";
+            star.title = eventForDay.note || "Có sự kiện";
+            div.appendChild(star);
+        }
+
         if(record){
 
             const dot =
@@ -2486,6 +2897,9 @@ function openDay(day){
             currentMonth,
             day
         );
+
+    window.__editingAttendanceKey = key;
+    window.__editingOriginalStatus = Number(currentBoard.attendance[key]?.status) || 0;
 
     const oldRecord =
         currentBoard.attendance[key] || {};
@@ -2803,6 +3217,26 @@ function selectWorkType(type){
     }
 
     if(type === 3){
+        const originalStatus = Number(window.__editingOriginalStatus) || 0;
+        const isAlreadyPaidLeave = originalStatus === 3 || originalStatus === 3.0;
+        const entitlement = Math.max(0, Number(currentBoard?.annualLeave) || 0);
+        const used = Object.values(currentBoard?.attendance || {}).filter(r => {
+            const st = Number(r?.status);
+            return st === 3;
+        }).length;
+        const remaining = Math.max(0, entitlement - used);
+        if(!isAlreadyPaidLeave && remaining <= 0){
+            openModal(`
+                <h2>Hết phép năm</h2>
+                <div class="leave-message">Bạn đã sử dụng hết số phép năm được hưởng. Hãy cập nhật lại số phép năm trong mục Phép Năm nếu cần.</div>
+                <button class="primary" onclick="closeModal(); openAnnualLeaveMenu()">Cập nhật phép năm</button>
+                <button class="secondary" onclick="closeModal()">Ok</button>
+            `);
+            const originalInput = document.getElementById("selectedWorkType");
+            if(originalInput) originalInput.value = String(originalStatus || "");
+            return;
+        }
+
         document
             .querySelectorAll(".special-work-option")[1]
             ?.classList.add("selected");
@@ -3100,6 +3534,12 @@ function saveAttendance(key){
 
     updateSummary();
 
+    updateMonthStats();
+
+    if(type === 3){
+        showAnnualLeaveMessage();
+    }
+
 }
 
 
@@ -3126,11 +3566,17 @@ function openSalaryDetail(){
     const hoursPerDay =
         Number(currentBoard.hoursPerDay) || 8;
 
+    const overtimeSalary =
+        Number(currentBoard.overtimeSalary) || salary;
+
     const dailyRate =
         salary / standardDays;
 
     const hourlyRate =
         dailyRate / hoursPerDay;
+
+    const overtimeHourlyRate =
+        overtimeSalary / standardDays / hoursPerDay;
 
     const records = [];
 
@@ -3170,12 +3616,16 @@ function openSalaryDetail(){
             return;
         }
 
+        // Nghỉ có lương vẫn được tính đủ 1 ngày công
+        // theo mức lương gốc / 26 ngày.
         const workMoney =
             status === 1
                 ? dailyRate
                 : status === 0.5
                     ? dailyRate * 0.5
-                    : 0;
+                    : isPaidLeave
+                        ? dailyRate
+                        : 0;
 
         const rate =
             Number(record.overtimeRate)
@@ -3184,7 +3634,7 @@ function openSalaryDetail(){
 
         const overtimeMoney =
             overtimeHours *
-            hourlyRate *
+            overtimeHourlyRate *
             rate;
 
         records.push({
@@ -3235,9 +3685,13 @@ function openSalaryDetail(){
                                         ? "Cả ngày"
                                         : item.status === 0.5
                                             ? "1/2 công"
-                                            : item.status === 2
-                                                ? "Tăng ca cuối tuần/ngày"
-                                                : "Chỉ tăng ca"
+                                            : item.status === 3
+                                                ? "Nghỉ có lương"
+                                                : item.status === 4
+                                                    ? "Nghỉ không lương"
+                                                    : item.status === 2
+                                                        ? "Tăng ca cuối tuần/ngày"
+                                                        : "Chỉ tăng ca"
                                 }
                             </div>
                         </div>
@@ -3437,6 +3891,9 @@ function updateSummary(){
     const overtimeRate =
         Number(currentBoard.overtimeRate) || 1.5;
 
+    const overtimeSalary =
+        Number(currentBoard.overtimeSalary) || salary;
+
     const advance =
         Number(currentBoard.advance) || 0;
 
@@ -3469,6 +3926,9 @@ function updateSummary(){
     const hourlyRate =
         dailyRate / hoursPerDay;
 
+    const overtimeHourlyRate =
+        overtimeSalary / standardDays / hoursPerDay;
+
 
     let earnedWork = 0;
     let earnedOvertime = 0;
@@ -3500,6 +3960,16 @@ function updateSummary(){
                 workedDays += 0.5;
             }
 
+            // Nghỉ có lương = 1 ngày công, lấy lương gốc / 26 ngày.
+            if(
+                status === 3
+                || status === "paidLeave"
+                || status === "paid_leave"
+                || status === "nghi_co_luong"
+            ){
+                earnedWork += dailyRate;
+            }
+
             const ot =
                 Math.max(
                     0,
@@ -3517,7 +3987,7 @@ function updateSummary(){
             totalOvertimeHours += ot;
 
             earnedOvertime +=
-                hourlyRate *
+                overtimeHourlyRate *
                 ot *
                 dayOvertimeRate;
 
@@ -3625,6 +4095,9 @@ function updateMonthStats(){
     const hoursPerDay =
         Number(currentBoard.hoursPerDay) || 8;
 
+    const overtimeSalary =
+        Number(currentBoard.overtimeSalary) || salary;
+
     const defaultOvertimeRate =
         Number(currentBoard.overtimeRate) || 1.5;
 
@@ -3633,6 +4106,9 @@ function updateMonthStats(){
 
     const hourlyRate =
         dailyRate / hoursPerDay;
+
+    const overtimeHourlyRate =
+        overtimeSalary / standardDays / hoursPerDay;
 
     let earnedWork = 0;
     let earnedOvertime = 0;
@@ -3660,6 +4136,8 @@ function updateMonthStats(){
             || status === "nghi_co_luong"
         ){
             paidLeave += 1;
+            // Nghỉ có lương vẫn nhận đủ 1 ngày công.
+            earnedWork += dailyRate;
         }else if(
             status === 4
             || status === "4"
@@ -3923,309 +4401,171 @@ function formatWorkDays(value){
 ========================================= */
 
 function money(value){
-
-    return Number(value)
-        .toLocaleString("vi-VN")
-        + " đ";
-
+    // Chỉ hiển thị phần nguyên của số tiền, bỏ phần lẻ phía sau.
+    // Ví dụ: 4.777.644,231 → 4.777.644 đ
+    const n = Math.floor(Number(value) || 0);
+    return n.toLocaleString("vi-VN") + " đ";
 }
+
+// Chuẩn hoá số tiền khi người dùng nhập: 2000000 → 2.000.000
+function parseMoney(value){
+    const raw = String(value ?? "").replace(/[^0-9]/g, "");
+    return raw ? Number(raw) : 0;
+}
+
+function formatMoneyInputValue(value){
+    const n = parseMoney(value);
+    return n > 0 ? n.toLocaleString("vi-VN") : "";
+}
+
+function formatMoneyInput(el){
+    if(!el) return;
+
+    const oldValue = String(el.value ?? "");
+    const oldPos = typeof el.selectionStart === "number" ? el.selectionStart : oldValue.length;
+    const digitsBeforeCursor = oldValue.slice(0, oldPos).replace(/[^0-9]/g, "").length;
+    const digits = oldValue.replace(/[^0-9]/g, "");
+
+    if(!digits){
+        el.value = "";
+        return;
+    }
+
+    const formatted = Number(digits).toLocaleString("vi-VN");
+    el.value = formatted;
+
+    let pos = 0;
+    let seenDigits = 0;
+    while(pos < formatted.length && seenDigits < digitsBeforeCursor){
+        if(/[0-9]/.test(formatted[pos])) seenDigits++;
+        pos++;
+    }
+    try{ el.setSelectionRange(pos, pos); }catch(e){}
+}
+
+// Áp dụng cho mọi ô nhập có class money-input, kể cả các form mở động bằng modal.
+document.addEventListener("input", (event) => {
+    const el = event.target;
+    if(el && el.classList && el.classList.contains("money-input")){
+        formatMoneyInput(el);
+    }
+});
+
+document.addEventListener("blur", (event) => {
+    const el = event.target;
+    if(el && el.classList && el.classList.contains("money-input")){
+        formatMoneyInput(el);
+    }
+}, true);
+
+document.addEventListener("input", (event) => {
+    if(event.target?.id === "settingsOvertimeSalary") updateSettingsOvertimeSalaryPreview();
+});
+
 
 
 /* =========================================
    APPENDIX
 ========================================= */
 
-function openOvertimeLog(){
-
-    if(!currentBoard){
-        return;
-    }
-
-    const monthPrefix =
-        `${currentYear}-${String(currentMonth+1).padStart(2,"0")}-`;
-
-    const salary =
-        Number(currentBoard.salary) || 0;
-
-    const standardDays =
-        Number(currentBoard.standardDays) || 26;
-
-    const hoursPerDay =
-        Number(currentBoard.hoursPerDay) || 8;
-
-    const defaultRate =
-        Number(currentBoard.overtimeRate) || 1.5;
-
-    const dailyRate =
-        salary / standardDays;
-
-    const hourlyRate =
-        dailyRate / hoursPerDay;
-
-    const records = [];
-
-    Object.entries(
-        currentBoard.attendance || {}
-    ).forEach(([date, record]) => {
-
-        if(!date.startsWith(monthPrefix)){
-            return;
-        }
-
-        const hours =
-            Number(record.overtimeHours) || 0;
-
-        if(hours <= 0){
-            return;
-        }
-
-        const rate =
-            Math.max(
-                1,
-                Number(record.overtimeRate)
-                    || defaultRate
-            );
-
-        const moneyValue =
-            hours *
-            hourlyRate *
-            rate;
-
-        const dateObj =
-            new Date(`${date}T00:00:00`);
-
-        const weekday =
-            [
-                "Chủ nhật",
-                "Thứ 2",
-                "Thứ 3",
-                "Thứ 4",
-                "Thứ 5",
-                "Thứ 6",
-                "Thứ 7"
-            ][dateObj.getDay()];
-
-        records.push({
-            date,
-            weekday,
-            hours,
-            rate,
-            money:moneyValue,
-            note:record.note || ""
-        });
-
-    });
-
-
-    records.sort(
-        (a,b)=>a.date.localeCompare(b.date)
-    );
-
-
-    const totalHours =
-        records.reduce(
-            (sum,item)=>sum + item.hours,
-            0
-        );
-
-    const totalMoney =
-        records.reduce(
-            (sum,item)=>sum + item.money,
-            0
-        );
-
-
-    /*
-     * Tổng hợp theo từng hệ số.
-     * Ví dụ X1,5: tổng bao nhiêu giờ + bao nhiêu tiền.
-     */
-    const coefficientMap = {};
-
-    records.forEach(item => {
-
-        const key =
-            Number(item.rate).toFixed(1);
-
-        if(!coefficientMap[key]){
-            coefficientMap[key] = {
-                rate:item.rate,
-                hours:0,
-                money:0,
-                days:0
-            };
-        }
-
-        coefficientMap[key].hours += item.hours;
-        coefficientMap[key].money += item.money;
-        coefficientMap[key].days += 1;
-
-    });
-
-
-    const coefficientRows =
-        Object.values(coefficientMap)
-            .sort((a,b)=>a.rate-b.rate)
-            .map(item=>`
-
-                <div class="appendix-item">
-
-                    <span>
-                        Hệ số
-                        <strong>
-                            X${String(item.rate).replace(".", ",")}
-                        </strong>
-                    </span>
-
-                    <span style="text-align:right">
-                        <strong>
-                            ${formatHours(item.hours)}
-                        </strong>
-
-                        <br>
-
-                        <small style="color:#777">
-                            ${item.days} ngày ·
-                            ${money(item.money)}
-                        </small>
-                    </span>
-
-                </div>
-
-            `)
-            .join("");
-
-
-    const listHtml =
-        records.length
-            ? records.map(item=>`
-
-                <div
-                    class="overtime-log-item"
-                    onclick="openDayDetail('${item.date}')">
-
-                    <div class="overtime-log-head">
-
-                        <div class="overtime-log-date">
-                            ${formatDateVN(item.date)}
-                            · ${item.weekday}
-                        </div>
-
-                        <div class="overtime-log-money">
-                            ${money(item.money)}
-                        </div>
-
-                    </div>
-
-                    <div class="overtime-log-detail">
-                        Tăng ca:
-                        <strong>
-                            ${formatHours(item.hours)}
-                        </strong>
-                        · Hệ số:
-                        <strong>
-                            X${String(item.rate).replace(".", ",")}
-                        </strong>
-                    </div>
-
-                    ${
-                        item.note
-                            ? `
-                                <div
-                                    class="overtime-log-detail"
-                                    style="margin-top:4px">
-                                    Ghi chú:
-                                    ${escapeHtml(item.note)}
-                                </div>
-                            `
-                            : ""
-                    }
-
-                </div>
-
-            `).join("")
-            : `
-                <div
-                    style="
-                        text-align:center;
-                        color:#888;
-                        padding:24px 10px;">
-                    Chưa có ngày nào được chấm tăng ca
-                    trong tháng
-                    ${String(currentMonth+1).padStart(2,"0")}/${currentYear}.
-                </div>
-            `;
-
-
-    openModal(`
-
-        <h2>
-            Tăng ca
-        </h2>
-
-        <div
-            style="
-                color:#777;
-                margin-top:-8px;
-                margin-bottom:10px;">
-            Tháng
-            ${String(currentMonth+1).padStart(2,"0")}/${currentYear}
-        </div>
-
-
-        <div class="overtime-summary">
-
-            <div class="overtime-summary-row">
-                <span>
-                    Tổng số giờ tăng ca
-                </span>
-
-                <strong>
-                    ${formatHours(totalHours)}
-                </strong>
-            </div>
-
-            <div class="overtime-summary-row">
-                <span>
-                    Tổng tiền tăng ca
-                </span>
-
-                <strong>
-                    ${money(totalMoney)}
-                </strong>
-            </div>
-
-        </div>
-
-
-        ${
-            records.length
-                ? `
-                    <div class="note-title">
-                        Tổng hợp hệ số tăng ca
-                    </div>
-
-                    <div>
-                        ${coefficientRows}
-                    </div>
-                `
-                : ""
-        }
-
-
-        <div
-            class="note-title"
-            style="margin-top:20px">
-            Chi tiết theo ngày
-        </div>
-
-        <div class="overtime-log">
-            ${listHtml}
-        </div>
-
-    `);
-
+function openOvertimeQuickAdd(){
+    if(!currentBoard) return;
+    const appShell=document.querySelector(".app");
+    if(appShell) appShell.classList.add("screen-only");
+    hideAppScreens();
+    document.getElementById("overtimeScreen")?.classList.remove("hidden");
+    document.getElementById("bottomBar")?.classList.add("hidden");
+    document.querySelectorAll(".nav-btn").forEach(b=>b.classList.remove("active"));
+    window.scrollTo({top:0,left:0,behavior:"instant"});
+    renderOvertimeScreen();
 }
 
+function closeOvertimeScreen(){
+    document.getElementById("overtimeScreen")?.classList.add("hidden");
+    const appShell=document.querySelector(".app");
+    if(appShell) appShell.classList.remove("screen-only");
+    document.getElementById("detailScreen")?.classList.remove("hidden");
+    document.getElementById("bottomBar")?.classList.remove("hidden");
+    document.querySelectorAll(".nav-btn").forEach(b=>b.classList.toggle("active",b.dataset.screen==="home"));
+    window.scrollTo({top:0,left:0,behavior:"instant"});
+    renderCalendar(); updateSummary(); updateMonthStats();
+}
+
+function renderOvertimeScreen(){
+    if(!currentBoard) return;
+    const today=new Date();
+    const todayKey=dateKey(today.getFullYear(),today.getMonth(),today.getDate());
+    const existing=currentBoard.attendance?.[todayKey]||{};
+    const defaultHours=Number(existing.overtimeHours)||0;
+    const defaultRate=Number(existing.overtimeRate)||Number(currentBoard.overtimeRate)||1.5;
+    const hoursEl=document.getElementById("pageOtHours");
+    const rateEl=document.getElementById("pageOtRate");
+    if(hoursEl) hoursEl.value=defaultHours;
+    if(rateEl) rateEl.value=`X${String(defaultRate).replace(".",",")}`;
+    const dateLabel=document.getElementById("overtimeTodayLabel");
+    if(dateLabel) dateLabel.textContent=`Ngày hôm nay — ${String(today.getDate()).padStart(2,"0")}/${String(today.getMonth()+1).padStart(2,"0")}/${today.getFullYear()}`;
+    const hint=document.getElementById("overtimePageHint");
+    if(hint) hint.textContent="Hệ số lấy tự động từ cài đặt tăng ca. Nhập số giờ, tiền tăng ca sẽ tự cập nhật theo hệ số đã lưu.";
+    renderOvertimeHistoryIntoPage();
+}
+
+function savePageOvertime(){
+    if(!currentBoard) return;
+    const today=new Date();
+    const key=dateKey(today.getFullYear(),today.getMonth(),today.getDate());
+    const hours=Math.max(0,Math.min(24,Number(document.getElementById("pageOtHours")?.value)||0));
+    const rate=Math.max(1,Math.min(10,Number(currentBoard.overtimeRate)||1.5));
+    const old=currentBoard.attendance?.[key]||{};
+    const status=Number(old.status)||0;
+    if((status===3||status===4)&&hours>0){alert("Ngày nghỉ có lương/không lương không thể thêm tăng ca.");return;}
+    if(!currentBoard.attendance) currentBoard.attendance={};
+    if(hours<=0){
+        if(old.status||old.note) currentBoard.attendance[key]={...old,overtimeHours:0,overtimeRate:rate};
+        else delete currentBoard.attendance[key];
+    }else{
+        currentBoard.attendance[key]={...old,status:old.status??0,overtimeHours:hours,overtimeRate:rate,note:old.note||""};
+    }
+    saveData(); renderCalendar(); updateSummary(); updateMonthStats(); renderOvertimeScreen();
+}
+
+function renderOvertimeHistoryIntoPage(){
+    const monthPrefix=`${currentYear}-${String(currentMonth+1).padStart(2,"0")}-`;
+    const salary=Number(currentBoard.salary)||0;
+    const standardDays=Number(currentBoard.standardDays)||26;
+    const hoursPerDay=Number(currentBoard.hoursPerDay)||8;
+    const overtimeSalary=Number(currentBoard.overtimeSalary)||salary;
+    const defaultRate=Number(currentBoard.overtimeRate)||1.5;
+    const overtimeHourlyRate=overtimeSalary/standardDays/hoursPerDay;
+    const records=[];
+    Object.entries(currentBoard.attendance||{}).forEach(([date,record])=>{
+        if(!date.startsWith(monthPrefix)) return;
+        const hours=Number(record.overtimeHours)||0; if(hours<=0)return;
+        const rate=Math.max(1,Number(record.overtimeRate)||defaultRate);
+        const moneyValue=hours*overtimeHourlyRate*rate;
+        const dateObj=new Date(`${date}T00:00:00`);
+        const weekday=["Chủ nhật","Thứ 2","Thứ 3","Thứ 4","Thứ 5","Thứ 6","Thứ 7"][dateObj.getDay()];
+        records.push({date,weekday,hours,rate,money:moneyValue,note:record.note||""});
+    });
+    records.sort((a,b)=>a.date.localeCompare(b.date));
+    const totalHours=records.reduce((sum,x)=>sum+x.hours,0);
+    const totalMoney=records.reduce((sum,x)=>sum+x.money,0);
+    const monthLabel=document.getElementById("overtimeMonthLabel");
+    if(monthLabel) monthLabel.textContent=`Tháng ${String(currentMonth+1).padStart(2,"0")}/${currentYear}`;
+    const summary=document.getElementById("overtimePageSummary");
+    if(summary) summary.innerHTML=`<div class="overtime-summary-row"><span>Tổng số giờ tăng ca</span><strong>${formatHours(totalHours)}</strong></div><div class="overtime-summary-row"><span>Tổng tiền tăng ca</span><strong>${money(totalMoney)}</strong></div>`;
+    const log=document.getElementById("overtimePageLog");
+    if(!log)return;
+    log.innerHTML=records.length?records.map(item=>`<div class="overtime-log-item" onclick="openDayDetail('${item.date}')"><div class="overtime-log-head"><div class="overtime-log-date">${formatDateVN(item.date)} · ${item.weekday}</div><div class="overtime-log-money">${money(item.money)}</div></div><div class="overtime-log-detail">Tăng ca: <strong>${formatHours(item.hours)}</strong> · Hệ số: <strong>X${String(item.rate).replace(".",",")}</strong></div>${item.note?`<div class="overtime-log-detail" style="margin-top:4px">Ghi chú: ${escapeHtml(item.note)}</div>`:""}</div>`).join(""):`<div class="transaction-empty">Chưa có ngày nào được chấm tăng ca trong tháng ${String(currentMonth+1).padStart(2,"0")}/${currentYear}.</div>`;
+}
+
+function saveQuickOvertime(key){
+    // Tương thích với dữ liệu/code cũ: giao diện mới dùng savePageOvertime().
+    savePageOvertime();
+}
+
+function openOvertimeLog(){
+    openOvertimeQuickAdd();
+}
 
 function formatHours(hours){
 
@@ -4252,6 +4592,333 @@ function formatDateVN(date){
 }
 
 
+
+function getPaidLeaveUsed(board=currentBoard){
+    const year = new Date().getFullYear();
+    return Object.entries(board?.attendance || {}).filter(([date,r]) => String(date).startsWith(String(year)+"-") && Number(r?.status) === 3).length;
+}
+
+function getAnnualLeaveRemaining(board=currentBoard){
+    const entitlement = Math.max(0, Number(board?.annualLeave) || 0);
+    return Math.max(0, entitlement - getPaidLeaveUsed(board));
+}
+
+function openAnnualLeaveMenu(){
+    if(!currentBoard) return;
+    const appShell=document.querySelector(".app");
+    if(appShell) appShell.classList.add("screen-only");
+    hideAppScreens();
+    document.getElementById("annualLeaveScreen")?.classList.remove("hidden");
+    document.getElementById("bottomBar")?.classList.add("hidden");
+    document.querySelectorAll(".nav-btn").forEach(b=>b.classList.remove("active"));
+    window.scrollTo({top:0,left:0,behavior:"instant"});
+    renderAnnualLeaveScreen();
+}
+
+function renderAnnualLeaveScreen(){
+    if(!currentBoard)return;
+    const entitlement=Math.max(0,Number(currentBoard.annualLeave)||0);
+    const used=getPaidLeaveUsed(currentBoard);
+    const remaining=Math.max(0,entitlement-used);
+    const input=document.getElementById("annualLeavePageInput");
+    if(input) input.value=entitlement;
+    const a=document.getElementById("annualEntitlement"); if(a)a.textContent=`${entitlement} ngày`;
+    const u=document.getElementById("annualUsed"); if(u)u.textContent=`${used} ngày`;
+    const r=document.getElementById("annualRemaining"); if(r)r.textContent=`${remaining} ngày`;
+}
+
+function closeAnnualLeaveScreen(){
+    document.getElementById("annualLeaveScreen")?.classList.add("hidden");
+    const appShell=document.querySelector(".app");
+    if(appShell) appShell.classList.remove("screen-only");
+    document.getElementById("detailScreen")?.classList.remove("hidden");
+    document.getElementById("bottomBar")?.classList.remove("hidden");
+    document.querySelectorAll(".nav-btn").forEach(b=>b.classList.toggle("active",b.dataset.screen==="home"));
+    window.scrollTo({top:0,left:0,behavior:"instant"});
+    renderCalendar(); updateSummary(); updateMonthStats();
+}
+
+function saveAnnualLeavePage(){
+    if(!currentBoard)return;
+    const value=Math.max(0,Number(document.getElementById("annualLeavePageInput")?.value)||0);
+    currentBoard.annualLeave=value; saveData(); renderCalendar(); updateSummary(); updateMonthStats(); renderAnnualLeaveScreen();
+    showAnnualLeaveMessageInline();
+}
+
+function showAnnualLeaveMessageInline(){
+    const box=document.getElementById("annualLeaveMessage");
+    const ok=document.getElementById("annualLeaveOk");
+    if(!box)return;
+    box.innerHTML=`Số phép năm còn lại là <strong>${getAnnualLeaveRemaining(currentBoard)} ngày</strong>.<br><br>Nhớ ưu tiên nghỉ phép cho các dịp quan trọng bạn nhé!`;
+    box.classList.remove("hidden"); if(ok)ok.classList.remove("hidden");
+}
+function hideAnnualLeaveMessage(){
+    document.getElementById("annualLeaveMessage")?.classList.add("hidden");
+    document.getElementById("annualLeaveOk")?.classList.add("hidden");
+}
+
+function saveAnnualLeave(){ saveAnnualLeavePage(); }
+
+function showAnnualLeaveMessage(){ showAnnualLeaveMessageInline(); }
+
+function openEventCalendar(){
+    if(!currentBoard) return;
+    if(!Array.isArray(currentBoard.events)) currentBoard.events = [];
+    const year = new Date().getFullYear();
+    const months = Array.from({length:12}, (_,m)=>{
+        const first = new Date(year,m,1);
+        let start = first.getDay(); start = start===0 ? 6 : start-1;
+        const days = new Date(year,m+1,0).getDate();
+        let html = `<div class="event-month"><h3>Tháng ${m+1}</h3><div class="event-weekdays"><span>T2</span><span>T3</span><span>T4</span><span>T5</span><span>T6</span><span>T7</span><span>CN</span></div><div class="event-mini-grid">`;
+        for(let i=0;i<start;i++) html += `<span></span>`;
+        for(let d=1;d<=days;d++){
+            const date = dateKey(year,m,d);
+            const has = currentBoard.events.some(e=>e.date===date);
+            html += `<button type="button" class="event-day ${has?'has-event':''}" onclick="openEventEditor('${date}')">${d}${has?'<i>★</i>':''}</button>`;
+        }
+        html += `</div></div>`;
+        return html;
+    }).join("");
+    openModal(`
+        <h2>Ghi chú sự kiện</h2>
+        <div class="event-hint">Bấm vào lịch để tạo sự kiện mới</div>
+        <div class="event-year-grid">${months}</div>
+        <div class="note-title" style="margin-top:18px">Sự kiện đã tạo</div>
+        <div id="eventList">${renderEventListHtml()}</div>
+        <button class="secondary" onclick="openAnnualLeaveMenu()">← Quay lại Phép Năm</button>
+    `);
+}
+
+function renderEventListHtml(){
+    const events = [...(currentBoard?.events || [])].sort((a,b)=>(a.date+a.time).localeCompare(b.date+b.time));
+    if(!events.length) return `<div class="event-empty">Chưa có sự kiện nào.</div>`;
+    return events.map(e=>{
+        const enabled = !!e.reminderEnabled;
+        return `<div class="event-list-item">
+            <div><strong>★ ${formatDateVN(e.date)} ${escapeHtml(e.time||'09:00')}</strong><div class="event-note">${escapeHtml(e.note||'')}</div></div>
+            <div class="event-actions">
+                <button class="event-reminder-btn ${enabled?'enabled':''}" onclick="toggleEventReminder('${e.id}')">${enabled?'🔔 Đã bật':'🔔 Bật nhắc nhở sự kiện'}</button>
+                <button class="event-delete-btn" onclick="deleteEvent('${e.id}')">Xoá</button>
+            </div>
+        </div>`;
+    }).join("");
+}
+
+function openEventEditor(date){
+    const existing = (currentBoard.events || []).find(e=>e.date===date);
+    openModal(`
+        <h2>${existing?'Sửa':'Tạo'} sự kiện</h2>
+        <div class="day-date">${formatDateVN(date)}</div>
+        <div class="note-title">Thời gian sự kiện</div>
+        <input id="eventTimeInput" class="input" type="time" value="${escapeAttr(existing?.time||'09:00')}">
+        <div class="note-title">Nội dung ghi chú</div>
+        <textarea id="eventNoteInput" class="note-input" rows="4" placeholder="Nhập ghi chú sự kiện...">${escapeHtml(existing?.note||'')}</textarea>
+        <button class="primary" onclick="saveEvent('${date}', '${existing?.id||''}')">Lưu</button>
+        <button class="secondary" onclick="openEventCalendar()">Huỷ bỏ</button>
+    `);
+}
+
+function saveEvent(date, existingId=''){
+    const note = document.getElementById("eventNoteInput")?.value.trim() || "";
+    const time = document.getElementById("eventTimeInput")?.value || "09:00";
+    if(!note){ alert("Vui lòng nhập nội dung sự kiện."); return; }
+    if(!Array.isArray(currentBoard.events)) currentBoard.events=[];
+    if(existingId){
+        const e=currentBoard.events.find(x=>String(x.id)===String(existingId));
+        if(e){ e.note=note; e.time=time; e.reminderEnabled=false; e.lastNotified=""; }
+    }else{
+        currentBoard.events.push({id:String(Date.now()),date,time,note,reminderHours:1,reminderEnabled:false,lastNotified:""});
+    }
+    saveData();
+    renderCalendar();
+    closeModal();
+    openEventCalendar();
+}
+
+async function toggleEventReminder(id){
+    const e=(currentBoard.events||[]).find(x=>String(x.id)===String(id));
+    if(!e) return;
+    if(e.reminderEnabled){ e.reminderEnabled=false; saveData(); openEventCalendar(); return; }
+    const hours = Math.max(0.25, Number(prompt("Nhắc trước sự kiện bao nhiêu giờ?", String(e.reminderHours||1))) || 1);
+    e.reminderHours=hours;
+    if("Notification" in window){
+        if(Notification.permission === "default"){
+            const permission = await Notification.requestPermission();
+            if(permission !== "granted"){ alert("Bạn chưa cấp quyền thông báo."); return; }
+        }
+        if(Notification.permission !== "granted"){ alert("Hãy bật quyền Thông báo cho ứng dụng trong cài đặt trình duyệt/iPhone."); return; }
+        e.reminderEnabled=true;
+        e.lastNotified="";
+        saveData();
+        checkEventReminders();
+        openEventCalendar();
+    }else{
+        alert("Thiết bị/trình duyệt này chưa hỗ trợ thông báo.");
+    }
+}
+
+function deleteEvent(id){
+    if(!confirm("Xoá sự kiện này?")) return;
+    currentBoard.events=(currentBoard.events||[]).filter(e=>String(e.id)!==String(id));
+    saveData(); renderCalendar(); openEventCalendar();
+}
+
+function checkEventReminders(){
+    if(!currentBoard) return;
+    if(!('Notification' in window) || Notification.permission!=='granted') return;
+    const now=Date.now();
+    boards.forEach(board=>{
+        (board.events||[]).forEach(e=>{
+            if(!e.reminderEnabled || !e.date || !e.time) return;
+            const eventTime=new Date(`${e.date}T${e.time}:00`).getTime();
+            const remindAt=eventTime-(Number(e.reminderHours)||1)*3600000;
+            if(now>=remindAt && now<eventTime && e.lastNotified!==String(eventTime)){
+                new Notification("Nhắc nhở sự kiện", {body:`${e.note} — ${formatDateVN(e.date)} ${e.time}`});
+                e.lastNotified=String(eventTime);
+                saveData();
+            }
+        });
+    });
+}
+
+if(!window.__dgEventReminderTimer){
+    window.__dgEventReminderTimer=setInterval(checkEventReminders,30000);
+}
+
+function transactionLabel(type){
+    const map={"Ứng lương":"Ứng lương","Phụ cấp":"Phụ cấp","Trừ tiền":"Trừ tiền","Thanh toán":"Thanh toán"};
+    return map[type]||type;
+}
+
+function recalcTransactionTotals(board){
+    if(!board) return;
+    const sums={"Ứng lương":0,"Phụ cấp":0,"Trừ tiền":0,"Thanh toán":0};
+    (board.transactions||[]).forEach(t=>{
+        if(Object.prototype.hasOwnProperty.call(sums,t.type)) sums[t.type]+=Number(t.amount)||0;
+    });
+    board.advance=sums["Ứng lương"];
+    board.allowance=sums["Phụ cấp"];
+    board.deduct=sums["Trừ tiền"];
+    board.paid=sums["Thanh toán"];
+}
+
+function formatTransactionDate(value){
+    if(!value) return "Không rõ ngày";
+    const parts=String(value).split("-");
+    if(parts.length===3) return `${parts[2]}/${parts[1]}/${parts[0]}`;
+    return String(value);
+}
+
+let activeTransactionType="Ứng lương";
+
+function openTransactionScreen(type){
+    if(!currentBoard){ alert("Vui lòng chọn bảng chấm công trước."); return; }
+    activeTransactionType=type;
+    const appShell=document.querySelector(".app");
+    if(appShell) appShell.classList.add("screen-only");
+    hideAppScreens();
+    document.getElementById("transactionScreen")?.classList.remove("hidden");
+    document.querySelectorAll(".nav-btn").forEach(b=>b.classList.remove("active"));
+    window.scrollTo({top:0,left:0,behavior:"instant"});
+    renderTransactionScreen();
+}
+
+function closeTransactionScreen(){
+    document.getElementById("transactionScreen")?.classList.add("hidden");
+    const appShell=document.querySelector(".app");
+    if(appShell) appShell.classList.remove("screen-only");
+    document.getElementById("detailScreen")?.classList.remove("hidden");
+    document.getElementById("bottomBar")?.classList.remove("hidden");
+    document.querySelectorAll(".nav-btn").forEach(b=>b.classList.toggle("active",b.dataset.screen==="home"));
+    window.scrollTo({top:0,left:0,behavior:"instant"});
+    renderCalendar();
+    updateSummary();
+}
+
+function renderTransactionScreen(){
+    const list=document.getElementById("transactionList");
+    const totalEl=document.getElementById("transactionTotal");
+    const title=document.getElementById("transactionTitle");
+    if(!list||!totalEl||!title||!currentBoard) return;
+    title.textContent=transactionLabel(activeTransactionType);
+    const items=(currentBoard.transactions||[])
+        .filter(t=>t.type===activeTransactionType)
+        .sort((a,b)=>Number(b.id||0)-Number(a.id||0));
+    const total=items.reduce((sum,t)=>sum+(Number(t.amount)||0),0);
+    totalEl.innerHTML=`<span>Tổng ${transactionLabel(activeTransactionType).toLowerCase()} đã thêm</span><strong>${money(total)}</strong>`;
+    if(!items.length){
+        list.innerHTML=`<div class="transaction-empty">Chưa có dữ liệu ${transactionLabel(activeTransactionType).toLowerCase()}.<br>Bấm <strong>＋ Thêm mới</strong> để nhập khoản đầu tiên.</div>`;
+        return;
+    }
+    list.innerHTML=items.map(t=>`
+        <div class="transaction-item">
+            <div class="transaction-item-top">
+                <div>
+                    <div class="transaction-item-date">${formatTransactionDate(t.date)}</div>
+                    <div class="transaction-item-note">${escapeHtml(t.note||"Không có ghi chú")}</div>
+                </div>
+                <div class="transaction-item-amount">${money(Number(t.amount)||0)}</div>
+            </div>
+            <div class="transaction-actions">
+                <button class="transaction-action" type="button" onclick="editTransaction(${Number(t.id)})">✏️ Chỉnh sửa</button>
+                <button class="transaction-action delete" type="button" onclick="deleteTransaction(${Number(t.id)})">🗑 Xoá</button>
+            </div>
+        </div>`).join("");
+}
+
+function openTransactionForm(editId=null){
+    const existing=(currentBoard?.transactions||[]).find(t=>Number(t.id)===Number(editId));
+    const amount=existing?Number(existing.amount)||0:"";
+    const note=existing?.note||"";
+    const title=existing?`Chỉnh sửa ${transactionLabel(activeTransactionType)}`:`Thêm ${transactionLabel(activeTransactionType)}`;
+    openModal(`
+        <h2>${title}</h2>
+        <div class="transaction-modal-note">Khoản này sẽ được cộng/trừ tự động vào bảng lương.</div>
+        <input id="moneyInput" class="input money-input" type="text" inputmode="numeric" autocomplete="off" value="${formatMoneyInputValue(amount)}" placeholder="Nhập số tiền">
+        <input id="noteInput" class="input" value="${escapeAttr(note)}" placeholder="Ghi chú">
+        <button class="primary" type="button" onclick="saveTransactionForm(${existing?Number(existing.id):"null"})">Lưu</button>
+    `);
+}
+
+function saveTransactionForm(editId=null){
+    const amount=parseMoney(document.getElementById("moneyInput")?.value);
+    const note=document.getElementById("noteInput")?.value.trim()||"";
+    if(amount<=0){alert("Vui lòng nhập số tiền lớn hơn 0.");return;}
+    if(!Array.isArray(currentBoard.transactions)) currentBoard.transactions=[];
+    if(editId!==null){
+        const item=currentBoard.transactions.find(t=>Number(t.id)===Number(editId));
+        if(item){item.amount=amount;item.note=note;item.type=activeTransactionType;}
+    }else{
+        const now=new Date();
+        currentBoard.transactions.push({id:Date.now(),type:activeTransactionType,amount,note,date:dateKey(now.getFullYear(),now.getMonth(),now.getDate())});
+    }
+    recalcTransactionTotals(currentBoard);
+    saveData();
+    closeModal();
+    renderTransactionScreen();
+    updateSummary();
+    updateMonthStats();
+}
+
+function editTransaction(id){
+    const item=(currentBoard?.transactions||[]).find(t=>Number(t.id)===Number(id));
+    if(!item)return;
+    activeTransactionType=item.type;
+    openTransactionForm(item.id);
+}
+
+function deleteTransaction(id){
+    const item=(currentBoard?.transactions||[]).find(t=>Number(t.id)===Number(id));
+    if(!item)return;
+    if(!confirm(`Xoá khoản ${transactionLabel(item.type).toLowerCase()} ${money(Number(item.amount)||0)}?`)) return;
+    currentBoard.transactions=currentBoard.transactions.filter(t=>Number(t.id)!==Number(id));
+    recalcTransactionTotals(currentBoard);
+    saveData();
+    renderTransactionScreen();
+    updateSummary();
+    updateMonthStats();
+}
+
 function openAppendix(type){
 
     openModal(`
@@ -4262,8 +4929,10 @@ function openAppendix(type){
 
         <input
             id="moneyInput"
-            class="input"
-            type="number"
+            class="input money-input"
+            type="text"
+            inputmode="numeric"
+            autocomplete="off"
             placeholder="Nhập số tiền">
 
         <input
@@ -4286,12 +4955,9 @@ function openAppendix(type){
 
 function saveAppendix(type){
 
-    const amount =
-        Number(
-            document.getElementById(
-                "moneyInput"
-            ).value
-        ) || 0;
+    const amount = parseMoney(
+        document.getElementById("moneyInput")?.value
+    );
 
     const note =
         document.getElementById(
@@ -4418,135 +5084,120 @@ function openMore(){
 ========================================= */
 
 function openSettings(){
-
-    openModal(`
-
-        <h2>
-            Cài đặt bảng
-        </h2>
-
-        <input
-            id="newName"
-            class="input"
-            value="${escapeAttr(currentBoard.name)}">
-
-        <input
-            id="newSalary"
-            class="input"
-            type="number"
-            value="${currentBoard.salary}"
-            placeholder="Lương cơ bản/tháng">
-
-        <input
-            id="newStandardDays"
-            class="input"
-            type="number"
-            min="1"
-            value="${currentBoard.standardDays || 26}"
-            placeholder="Ngày công chuẩn/tháng">
-
-        <input
-            id="newHoursPerDay"
-            class="input"
-            type="number"
-            min="1"
-            step="0.5"
-            value="${currentBoard.hoursPerDay || 8}"
-            placeholder="Số giờ công/ngày">
-
-        <input
-            id="newOvertimeRate"
-            class="input"
-            type="number"
-            min="1"
-            step="0.1"
-            value="${currentBoard.overtimeRate || 1.5}"
-            placeholder="Hệ số tăng ca">
-
-        <button
-            class="primary"
-            onclick="saveSettings()">
-
-            Lưu thay đổi
-
-        </button>
-
-        <br><br>
-
-        <button
-            class="secondary"
-            style="width:100%;color:#ff4338"
-            onclick="deleteBoard()">
-
-            Xóa bảng chấm công
-
-        </button>
-
-    `);
-
+    if(!currentBoard){
+        alert("Vui lòng chọn bảng chấm công trước.");
+        return;
+    }
+    const appShell=document.querySelector(".app");
+    if(appShell) appShell.classList.add("screen-only");
+    hideAppScreens();
+    document.querySelectorAll(".nav-btn").forEach(b=>b.classList.remove("active"));
+    document.getElementById("settingsScreen")?.classList.remove("hidden");
+    window.scrollTo({top:0,left:0,behavior:"instant"});
+    renderSettingsScreen();
 }
 
+function renderSettingsScreen(){
+    if(!currentBoard) return;
+    const name=document.getElementById("settingsJobName");
+    const salary=document.getElementById("settingsSalary");
+    const days=document.getElementById("settingsStandardDays");
+    const overtimeSalary=document.getElementById("settingsOvertimeSalary");
+    if(name) name.value=currentBoard.name||"";
+    if(salary) salary.value=formatMoneyInputValue(currentBoard.salary);
+    if(days) days.value=Number(currentBoard.standardDays)||26;
+    if(overtimeSalary){
+        const fallbackSalary = Number(currentBoard.salary)||0;
+        const value = Number(currentBoard.overtimeSalary)||fallbackSalary;
+        overtimeSalary.value=formatMoneyInputValue(value);
+    }
+    updateSettingsOvertimeSalaryPreview();
+    [salary,overtimeSalary].forEach(el=>{if(el) formatMoneyInput(el);});
+}
 
-function saveSettings(){
+function updateSettingsOvertimeSalaryPreview(){
+    const input=document.getElementById("settingsOvertimeSalary");
+    const preview=document.getElementById("settingsOvertimeSalaryPreview");
+    if(!preview) return;
 
-    currentBoard.name =
-        document.getElementById(
-            "newName"
-        ).value.trim();
+    const overtimeSalary =
+        Number(parseMoney(input?.value))
+        || Number(currentBoard?.overtimeSalary)
+        || Number(currentBoard?.salary)
+        || 0;
 
-    currentBoard.salary =
-        Number(
-            document.getElementById(
-                "newSalary"
-            ).value
-        ) || 0;
+    const standardDays =
+        Math.max(1, Number(currentBoard?.standardDays)||26);
 
-    currentBoard.standardDays =
-        Math.max(
-            1,
-            Number(
-                document.getElementById(
-                    "newStandardDays"
-                ).value
-            ) || 26
-        );
+    const hoursPerDay =
+        Math.max(1, Number(currentBoard?.hoursPerDay)||8);
 
-    currentBoard.hoursPerDay =
-        Math.max(
-            1,
-            Number(
-                document.getElementById(
-                    "newHoursPerDay"
-                ).value
-            ) || 8
-        );
+    const hourlyRate =
+        overtimeSalary / standardDays / hoursPerDay;
 
-    currentBoard.overtimeRate =
-        Math.max(
-            1,
-            Number(
-                document.getElementById(
-                    "newOvertimeRate"
-                ).value
-            ) || 1.5
-        );
+    preview.innerHTML =
+        `Đơn giá giờ tăng ca: <strong>${money(hourlyRate)}</strong>/giờ ` +
+        `· Mức tính tăng ca: <strong>${money(overtimeSalary)}</strong>/tháng.`;
+}
 
+function saveAdministrativeSettings(){
+    if(!currentBoard) return;
+    const name=document.getElementById("settingsJobName")?.value.trim()||"";
+    const salary=parseMoney(document.getElementById("settingsSalary")?.value);
+    const standardDays=Math.max(1,Number(document.getElementById("settingsStandardDays")?.value)||26);
+    if(!name){alert("Vui lòng nhập tên công việc.");return;}
+    if(salary<=0){alert("Vui lòng nhập lương cơ bản lớn hơn 0.");return;}
+    currentBoard.name=name;
+    currentBoard.salary=salary;
+    currentBoard.standardDays=standardDays;
+    saveData();
+    document.getElementById("detailName").innerText=currentBoard.name;
+    renderBoards();
+    renderCalendar();
+    updateSummary();
+    updateMonthStats();
+    renderSettingsScreen();
+    alert("Đã lưu lương hành chính.");
+}
+
+function saveOvertimeSettings(){
+    if(!currentBoard) return;
+
+    const overtimeSalary =
+        parseMoney(document.getElementById("settingsOvertimeSalary")?.value);
+
+    if(overtimeSalary<=0){
+        alert("Vui lòng nhập mức lương tính tăng ca lớn hơn 0.");
+        return;
+    }
+
+    // Chỉ thay đổi nguồn lương dùng để tính tăng ca.
+    // Công thức cũ vẫn giữ nguyên: số giờ × đơn giá giờ × hệ số.
+    currentBoard.overtimeSalary=overtimeSalary;
 
     saveData();
-
-    document.getElementById(
-        "detailName"
-    ).innerText =
-        currentBoard.name;
-
-    closeModal();
-
-    renderBoards();
-
+    renderCalendar();
     updateSummary();
-
+    updateMonthStats();
+    renderSettingsScreen();
+    alert(`Đã lưu mức lương tính tăng ca ${money(overtimeSalary)}.`);
 }
 
+function closeSettingsScreen(){
+    document.getElementById("settingsScreen")?.classList.add("hidden");
+    const appShell=document.querySelector(".app");
+    if(appShell) appShell.classList.remove("screen-only");
+    document.getElementById("detailScreen")?.classList.remove("hidden");
+    document.getElementById("bottomBar")?.classList.remove("hidden");
+    document.querySelectorAll(".nav-btn").forEach(b=>b.classList.toggle("active",b.dataset.screen==="home"));
+    window.scrollTo({top:0,left:0,behavior:"instant"});
+    renderCalendar();
+    updateSummary();
+}
+
+function deleteBoardFromSettings(){
+    deleteBoard();
+}
 
 function deleteBoard(){
 
@@ -4803,11 +5454,17 @@ function openDayDetail(key){
     const overtimeRate =
         Number(currentBoard.overtimeRate) || 1.5;
 
+    const overtimeSalary =
+        Number(currentBoard.overtimeSalary) || salary;
+
     const dailyRate =
         salary / standardDays;
 
     const hourlyRate =
         dailyRate / hoursPerDay;
+
+    const overtimeHourlyRate =
+        overtimeSalary / standardDays / hoursPerDay;
 
     const workMoney =
         (Number(record.status) || 0) * dailyRate;
@@ -4825,7 +5482,7 @@ function openDayDetail(key){
 
     const overtimeMoney =
         overtimeHours *
-        hourlyRate *
+        overtimeHourlyRate *
         dayOvertimeRate;
 
     const earned =
@@ -4909,63 +5566,139 @@ function openDayDetail(key){
 ========================================= */
 
 function exportExcel(){
-
-    let csv =
-        "Ngày,Công,Ghi chú\n";
-
-    Object.entries(
-        currentBoard.attendance
-    ).forEach(
-        ([date,record])=>{
-
-            const work =
-                record.status === 0.5
-                    ? "1/2 công"
-                    : record.status === 1
-                        ? "Cả ngày"
-                        : "";
-
-            const note =
-                String(record.note || "")
-                    .replaceAll('"','""');
-
-            csv +=
-                `${date},${work},"${note}"\n`;
-
-        }
-    );
-
-
-    const blob =
-        new Blob(
-            [
-                "\ufeff" + csv
-            ],
-            {
-                type:
-                    "text/csv;charset=utf-8;"
-            }
-        );
-
-
-    const url =
-        URL.createObjectURL(blob);
-
-    const a =
-        document.createElement("a");
-
-    a.href=url;
-
-    a.download =
-        currentBoard.name
-        + "-cham-cong.csv";
-
-    a.click();
-
-    URL.revokeObjectURL(url);
-
+    // Mỗi lần mở màn hình Xuất Excel, mặc định chọn đúng tháng hiện tại theo lịch.
+    const now=new Date();
+    exportSelectedMonth=`${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,"0")}`;
+    navigateApp("export");
+    renderExportMonths();
 }
 
+let exportSelectedMonth = "";
+
+function renderExportMonths(){
+    const box=document.getElementById("exportMonths");
+    if(!box) return;
+
+    // Luôn lấy thời gian thực tế của thiết bị.
+    // Năm trước: hiển thị đủ 12 tháng.
+    // Năm hiện tại: chỉ hiển thị đến đúng tháng hiện tại,
+    // không hiển thị các tháng chưa tới.
+    const now=new Date();
+    const currentY=now.getFullYear();
+    const currentM=now.getMonth()+1;
+    const previousY=currentY-1;
+    const currentKey=`${currentY}-${String(currentM).padStart(2,"0")}`;
+
+    // Chỉ đặt mặc định khi chưa có tháng được chọn.
+    // Hàm exportExcel() sẽ đặt lại về tháng thực tế khi người dùng mở màn hình.
+    if(!exportSelectedMonth){
+        exportSelectedMonth=currentKey;
+    }
+
+    // Nếu tháng đang chọn không còn hợp lệ trong danh sách hiện tại
+    // (ví dụ đã sang năm mới), chuyển về tháng thực tế.
+    const availableCurrentYear = exportSelectedMonth.startsWith(`${currentY}-`)
+        ? Number(exportSelectedMonth.slice(5)) <= currentM
+        : true;
+    if(!availableCurrentYear){
+        exportSelectedMonth=currentKey;
+    }
+
+    const months=[];
+
+    // Năm cũ -> năm mới. Năm trước giữ đủ 12 tháng.
+    for(let m=1;m<=12;m++){
+        months.push({
+            key:`${previousY}-${String(m).padStart(2,"0")}`,
+            year:previousY,
+            month:m
+        });
+    }
+
+    // Năm hiện tại chỉ tới tháng thực tế hiện tại.
+    for(let m=1;m<=currentM;m++){
+        months.push({
+            key:`${currentY}-${String(m).padStart(2,"0")}`,
+            year:currentY,
+            month:m
+        });
+    }
+
+    box.innerHTML=months.map(item=>{
+        const yearClass = item.year===currentY ? "current-year" : "previous-year";
+        const selectedClass = item.key===exportSelectedMonth ? " selected" : "";
+        return `<button type="button" class="export-month ${yearClass}${selectedClass}" onclick="selectExportMonth('${item.key}')">Tháng ${String(item.month).padStart(2,'0')}<small>${item.year}</small></button>`;
+    }).join("");
+}
+function selectExportMonth(key){exportSelectedMonth=key;renderExportMonths();}
+
+// Tự cập nhật danh sách tháng khi lịch thực tế bước sang tháng mới.
+// Kiểm tra mỗi phút để không cần người dùng tải lại trang.
+let lastExportCalendarKey = "";
+setInterval(()=>{
+    const now=new Date();
+    const key=`${now.getFullYear()}-${now.getMonth()+1}`;
+    if(key!==lastExportCalendarKey){
+        lastExportCalendarKey=key;
+        if(document.getElementById("exportScreen") && !document.getElementById("exportScreen").classList.contains("hidden")){
+            renderExportMonths();
+        }
+    }
+},60000);
+function csvCell(value){return `"${String(value??"").replaceAll('"','""')}"`;}
+
+function exportMonthData(year,month){
+    const prefix=`${year}-${String(month).padStart(2,"0")}-`;
+    const rows={
+        deduct:[["Ngày","Bảng","Khoản trừ","Số tiền","Ghi chú"]],
+        admin:[["Ngày","Bảng","Trạng thái","Tiền công","Ghi chú"]],
+        overtime:[["Ngày","Bảng","Giờ tăng ca","Hệ số","Tiền tăng ca","Ghi chú"]],
+        allowance:[["Ngày","Bảng","Khoản phụ cấp","Số tiền","Ghi chú"]],
+        summary:[["Bảng","Tháng","Lương cơ bản","Ngày công","Nghỉ có lương","Nghỉ không lương","Giờ tăng ca","Tiền tăng ca","Phụ cấp","Trừ tiền","Ứng lương","Tổng lương","Còn nhận"]]
+    };
+    boards.forEach(board=>{
+        const salary=Number(board.salary)||0, standardDays=Math.max(1,Number(board.standardDays)||26), hoursPerDay=Math.max(1,Number(board.hoursPerDay)||8), defaultRate=Math.max(1,Number(board.overtimeRate)||1.5);
+        const dailyRate=salary/standardDays, hourlyRate=dailyRate/hoursPerDay;
+        let workDays=0,paidLeave=0,unpaidLeave=0,otHours=0,otMoney=0,workMoney=0,allowance=0,deduct=0,advance=0;
+        Object.entries(board.attendance||{}).sort(([a],[b])=>a.localeCompare(b)).forEach(([date,r])=>{
+            if(!date.startsWith(prefix)) return;
+            const rawStatus=r?.status, status=Number(rawStatus)||0, ot=Math.max(0,Number(r?.overtimeHours)||0), rate=Math.max(1,Number(r?.overtimeRate)||defaultRate), note=String(r?.note||"");
+            let label="Khác",dayMoney=0;
+            if(status===1){workDays+=1;dayMoney=dailyRate;label="Cả ngày";}
+            else if(status===0.5){workDays+=0.5;dayMoney=dailyRate*0.5;label="1/2 công";}
+            else if(status===3||rawStatus==="paidLeave"||rawStatus==="paid_leave"||rawStatus==="nghi_co_luong"){paidLeave+=1;dayMoney=dailyRate;label="Nghỉ có lương";}
+            else if(status===4||rawStatus==="unpaidLeave"||rawStatus==="unpaid_leave"||rawStatus==="nghi_khong_luong"){unpaidLeave+=1;label="Nghỉ không lương";}
+            const oneOtMoney=ot*hourlyRate*rate; otHours+=ot;otMoney+=oneOtMoney;workMoney+=dayMoney;
+            rows.admin.push([date,board.name,label,Math.round(dayMoney),note]);
+            if(ot>0) rows.overtime.push([date,board.name,ot,rate,Math.round(oneOtMoney),note]);
+        });
+        (Array.isArray(board.transactions)?board.transactions:[]).forEach(item=>{
+            const date=String(item.date||""); if(!date.startsWith(prefix)) return;
+            const amount=Number(item.amount)||0, note=String(item.note||item.description||"");
+            if(item.type==="Trừ tiền"){deduct+=amount;rows.deduct.push([date,board.name,item.name||item.title||"Trừ tiền",amount,note]);}
+            else if(item.type==="Phụ cấp"){allowance+=amount;rows.allowance.push([date,board.name,item.name||item.title||"Phụ cấp",amount,note]);}
+            else if(item.type==="Ứng lương") advance+=amount;
+        });
+        const manualOvertime=Number(board.overtime)||0;
+        const totalSalary=workMoney+otMoney+allowance+manualOvertime;
+        const remain=totalSalary-deduct-advance-(Number(board.paid)||0);
+        rows.summary.push([board.name,`${String(month).padStart(2,"0")}/${year}`,Math.round(salary),workDays,paidLeave,unpaidLeave,otHours,Math.round(otMoney+manualOvertime),Math.round(allowance),Math.round(deduct),Math.round(advance),Math.round(totalSalary),Math.round(remain)]);
+    });
+    return rows;
+}
+
+function downloadSelectedExports(){
+    if(!exportSelectedMonth){alert("Vui lòng chọn tháng cần xuất.");return;}
+    const selected=[...document.querySelectorAll(".export-type:checked")].map(x=>x.value);
+    if(!selected.length){alert("Vui lòng tích chọn ít nhất một loại bảng lương.");return;}
+    const [year,month]=exportSelectedMonth.split("-").map(Number), data=exportMonthData(year,month);
+    const names={deduct:"TruTien",admin:"HanhChinh",overtime:"TangCa",allowance:"PhuCap",summary:"TongHop"};
+    const titles={deduct:"BẢNG LƯƠNG TRỪ TIỀN",admin:"BẢNG LƯƠNG HÀNH CHÍNH",overtime:"BẢNG LƯƠNG TĂNG CA",allowance:"BẢNG LƯƠNG PHỤ CẤP",summary:"BẢNG LƯƠNG TỔNG HỢP"};
+    const lines=[];
+    selected.forEach((type,index)=>{if(index>0) lines.push("");lines.push(csvCell(titles[type]));data[type].forEach(row=>lines.push(row.map(csvCell).join(",")));});
+    const blob=new Blob(["\ufeff"+lines.join("\n")],{type:"text/csv;charset=utf-8;"});
+    const url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download=`DG-Cham-Cong-${month}-${year}-${selected.map(x=>names[x]).join("_")}.csv`;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);
+}
 
 /* =========================================
    MODAL
@@ -5017,7 +5750,22 @@ function escapeAttr(text){
 
 
 
-function showMainApp(){const login=document.getElementById("loginScreen");const app=document.querySelector(".app");const nav=document.getElementById("bottomNav");if(login)login.style.display="none";if(app)app.classList.remove("auth-hidden");if(nav)nav.classList.remove("hidden");if(window.__refreshAccountScreen)window.__refreshAccountScreen();}
+function showMainApp(){
+    const login=document.getElementById("loginScreen");
+    document.querySelector(".app")?.classList.remove("screen-only");
+    const app=document.querySelector(".app");
+    const nav=document.getElementById("bottomNav");
+    if(login)login.style.display="none";
+    if(app)app.classList.remove("auth-hidden");
+    if(nav)nav.classList.remove("hidden");
+    try{
+        if("scrollRestoration" in history) history.scrollRestoration = "manual";
+        window.scrollTo({top:0,left:0,behavior:"instant"});
+        document.documentElement.scrollTop=0;
+        document.body.scrollTop=0;
+    }catch(e){window.scrollTo(0,0)}
+    if(window.__refreshAccountScreen)window.__refreshAccountScreen();
+}
 function loginAsGuest(){try{localStorage.setItem("dgAuthSession",JSON.stringify({type:"guest",loggedIn:true,at:Date.now()}))}catch(e){}showMainApp()}
 // loginWithGoogle được Firebase module ở phía trên cung cấp.
 function loginWithFacebook(){alert("Đăng nhập Facebook chưa được kết nối Firebase. Giao diện đã sẵn sàng; bước tiếp theo sẽ kết nối tài khoản Facebook và đồng bộ dữ liệu lên đám mây.")}
@@ -5027,10 +5775,28 @@ function loginWithFacebook(){alert("Đăng nhập Facebook chưa được kết 
    HOME / DATA / ACCOUNT
 ========================================= */
 function hideAppScreens(){
-    ["listScreen","detailScreen","dataScreen","accountScreen"].forEach(id=>document.getElementById(id)?.classList.add("hidden"));
+    ["listScreen","detailScreen","dataScreen","accountScreen","exportScreen","transactionScreen","settingsScreen","overtimeScreen","annualLeaveScreen"].forEach(id=>document.getElementById(id)?.classList.add("hidden"));
     document.getElementById("bottomBar")?.classList.add("hidden");
 }
 function navigateApp(screen){
+    const appShell = document.querySelector(".app");
+    // Data/Account nằm ngoài .app nên khi mở 2 màn hình này,
+    // không để .app giữ lại một khoảng trống cao bằng 1 viewport.
+    if(appShell){
+        appShell.classList.toggle("screen-only", screen === "data" || screen === "account" || screen === "export" || screen === "settings" || screen === "overtime" || screen === "annualLeave");
+    }
+    // Mỗi lần chuyển tab phải đưa giao diện về đầu trang.
+    // Nếu giữ scrollTop của màn hình trước, màn hình mới có thể bị trống
+    // và người dùng phải kéo xuống mới thấy nội dung.
+    try{
+        if("scrollRestoration" in history) history.scrollRestoration = "manual";
+        window.scrollTo({top:0, left:0, behavior:"instant"});
+        document.documentElement.scrollTop = 0;
+        document.body.scrollTop = 0;
+    }catch(e){
+        window.scrollTo(0,0);
+    }
+
     hideAppScreens();
     document.querySelectorAll(".nav-btn").forEach(b=>b.classList.toggle("active", b.dataset.screen===screen));
     if(screen==="home"){
@@ -5039,25 +5805,73 @@ function navigateApp(screen){
     }else if(screen==="data"){
         document.getElementById("dataScreen")?.classList.remove("hidden");
         refreshDataScreen();
-    }else{
+    }else if(screen==="account"){
         document.getElementById("accountScreen")?.classList.remove("hidden");
         refreshAccountScreen();
+    }else if(screen==="export"){
+        document.getElementById("exportScreen")?.classList.remove("hidden");
+        renderExportMonths();
+    }else if(screen==="settings"){
+        if(!currentBoard){
+            navigateApp("home");
+            return;
+        }
+        document.getElementById("settingsScreen")?.classList.remove("hidden");
+        renderSettingsScreen();
     }
 }
 function refreshDataScreen(){
     const all=[]; let total=0, workDays=0, otHours=0; let earliest="", latest="";
+    const now=new Date();
+    const currentYear=now.getFullYear();
+    const currentMonth=String(now.getMonth()+1).padStart(2,"0");
+    const currentMonthKey=`${currentYear}-${currentMonth}`;
+    let currentMonthEntries=0, currentMonthWorkDays=0, currentMonthOtHours=0, currentMonthPaidLeave=0, currentMonthUnpaidLeave=0;
+
     boards.forEach(board=>{
-        const salary=Number(board.salary)||0, standard=Math.max(1,Number(board.standardDays)||26), hoursDay=Math.max(1,Number(board.hoursPerDay)||8), daily=salary/standard, hourly=daily/hoursDay, defaultRate=Number(board.overtimeRate)||1.5;
+        const salary=Number(board.salary)||0, overtimeSalary=Number(board.overtimeSalary)||salary, standard=Math.max(1,Number(board.standardDays)||26), hoursDay=Math.max(1,Number(board.hoursPerDay)||8), daily=salary/standard, hourly=daily/hoursDay, overtimeHourly=overtimeSalary/standard/hoursDay, defaultRate=Number(board.overtimeRate)||1.5;
         Object.entries(board.attendance||{}).forEach(([date,r])=>{
-            const status=Number(r?.status)||0; const ot=Math.max(0,Number(r?.overtimeHours)||0); const rate=Math.max(1,Number(r?.overtimeRate)||defaultRate); const earned=(status===1?daily:status===0.5?daily*.5:0)+(ot*hourly*rate);
-            if(status===1)workDays+=1; else if(status===0.5)workDays+=.5; otHours+=ot; total+=earned;
-            if(!earliest||date<earliest)earliest=date; if(!latest||date>latest)latest=date;
+            const status=Number(r?.status)||0;
+            const ot=Math.max(0,Number(r?.overtimeHours)||0);
+            const rate=Math.max(1,Number(r?.overtimeRate)||defaultRate);
+            const earned=(status===1?daily:status===0.5?daily*.5:status===3?daily:0)+(ot*overtimeHourly*rate);
+            if(status===1)workDays+=1; else if(status===0.5)workDays+=.5;
+            otHours+=ot; total+=earned;
+            if(!earliest||date<earliest)earliest=date;
+            if(!latest||date>latest)latest=date;
+
+            if(date.startsWith(currentMonthKey)){
+                currentMonthEntries+=1;
+                if(status===1)currentMonthWorkDays+=1;
+                else if(status===0.5)currentMonthWorkDays+=.5;
+                if(status===3)currentMonthPaidLeave+=1;
+                if(status===4)currentMonthUnpaidLeave+=1;
+                currentMonthOtHours+=ot;
+            }
             all.push({date,board:board.name,status,ot,rate,earned,note:r?.note||""});
         });
     });
+
     all.sort((a,b)=>b.date.localeCompare(a.date));
+    const monthLabel=`Tháng ${currentMonth}/${currentYear}`;
     const hero=document.getElementById("dataHero");
-    if(hero) hero.innerHTML=`<div class="data-hero"><div class="data-hero-label">Tổng tiền công đã làm</div><div class="data-hero-value">${money(total)}</div><div class="data-grid"><div class="data-stat"><strong>${formatWorkDays(workDays)}</strong><span>Ngày công</span></div><div class="data-stat"><strong>${formatHours(otHours)}</strong><span>Tăng ca</span></div></div><div style="margin-top:12px;font-size:13px;opacity:.9">${earliest?`Từ ${formatDateVN(earliest)} đến ${formatDateVN(latest)}`:"Chưa có dữ liệu chấm công"}</div></div>`;
+    if(hero) hero.innerHTML=`
+        <div class="data-hero">
+            <div class="data-hero-label">Tổng tiền công đã làm</div>
+            <div class="data-hero-value">${money(total)}</div>
+            <div class="data-grid">
+                <div class="data-stat">
+                    <strong>${formatWorkDays(workDays)} ngày</strong>
+                    <span>Tổng ngày công đã làm</span>
+                    <small>${earliest?`Từ ${formatDateVN(earliest)} đến ${formatDateVN(latest)}`:"Chưa có dữ liệu"}</small>
+                </div>
+                <div class="data-stat">
+                    <strong>${currentMonthEntries} mục</strong>
+                    <span>Dữ liệu đã nhập · ${monthLabel}</span>
+                    <small>${formatWorkDays(currentMonthWorkDays)} ngày công · ${formatHours(currentMonthOtHours)} tăng ca · ${currentMonthPaidLeave} phép · ${currentMonthUnpaidLeave} nghỉ</small>
+                </div>
+            </div>
+        </div>`;
     const list=document.getElementById("historyList");
     if(list) list.innerHTML=all.length?all.map(x=>`<div class="history-item"><div class="history-top"><strong>${formatDateVN(x.date)} · ${escapeHtml(x.board)}</strong><span class="history-money">${money(x.earned)}</span></div><div class="history-sub">${x.status===1?"Cả ngày":x.status===0.5?"1/2 công":x.status===3?"Nghỉ có lương":x.status===4?"Nghỉ không lương":"Khác"}${x.ot>0?` · ${formatHours(x.ot)} · X${String(x.rate).replace(".",",")}`:""}</div>${x.note?`<div class="history-sub">${escapeHtml(x.note)}</div>`:""}</div>`).join(""):"<div class='salary-detail-empty'>Chưa có dữ liệu chấm công.</div>";
 }
@@ -5091,7 +5905,7 @@ async function logoutAccount(){
 }
 function exportAllData(){
     const rows=[["Ngày","Bảng","Công","Tăng ca (giờ)","Hệ số","Tiền công","Ghi chú"]];
-    boards.forEach(board=>{const salary=Number(board.salary)||0, standard=Math.max(1,Number(board.standardDays)||26), hoursDay=Math.max(1,Number(board.hoursPerDay)||8), daily=salary/standard, hourly=daily/hoursDay, def=Number(board.overtimeRate)||1.5;Object.entries(board.attendance||{}).sort(([a],[b])=>a.localeCompare(b)).forEach(([date,r])=>{const st=Number(r?.status)||0,ot=Number(r?.overtimeHours)||0,rate=Number(r?.overtimeRate)||def;const work=st===1?daily:st===.5?daily*.5:0;rows.push([date,board.name,st===1?"Cả ngày":st===.5?"1/2 công":st===3?"Nghỉ có lương":st===4?"Nghỉ không lương":"Khác",ot,rate,Math.round(work+ot*hourly*rate),String(r?.note||"").replaceAll('"','""')]);});});
+    boards.forEach(board=>{const salary=Number(board.salary)||0, overtimeSalary=Number(board.overtimeSalary)||salary, standard=Math.max(1,Number(board.standardDays)||26), hoursDay=Math.max(1,Number(board.hoursPerDay)||8), daily=salary/standard, hourly=daily/hoursDay, overtimeHourly=overtimeSalary/standard/hoursDay, def=Number(board.overtimeRate)||1.5;Object.entries(board.attendance||{}).sort(([a],[b])=>a.localeCompare(b)).forEach(([date,r])=>{const st=Number(r?.status)||0,ot=Number(r?.overtimeHours)||0,rate=Number(r?.overtimeRate)||def;const work=st===1?daily:st===.5?daily*.5:st===3?daily:0;rows.push([date,board.name,st===1?"Cả ngày":st===.5?"1/2 công":st===3?"Nghỉ có lương":st===4?"Nghỉ không lương":"Khác",ot,rate,Math.round(work+ot*overtimeHourly*rate),String(r?.note||"").replaceAll('"','""')]);});});
     const csv="\ufeff"+rows.map(r=>r.map(v=>`"${String(v).replaceAll('"','""')}"`).join(",")).join("\n");const blob=new Blob([csv],{type:"text/csv;charset=utf-8;"});const url=URL.createObjectURL(blob);const a=document.createElement("a");a.href=url;a.download="DG-Cham-Cong-Toan-Bo.csv";a.click();URL.revokeObjectURL(url);
 }
 
